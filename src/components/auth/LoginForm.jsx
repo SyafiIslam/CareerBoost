@@ -1,4 +1,5 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import OtherButton from "../button/OtherButton";
@@ -7,24 +8,40 @@ import Input from "./Input";
 import Label from './Label'
 
 const LoginForm = () => {
+  const [email, setEmail]= useState('')
+  const [password, setPassword]= useState('')
+
+  const handleSubmit= (e) => {
+    e.preventDefault()
+    axios.post('https://tweet-api.up.railway.app/api/v1/auth/login', {
+      email: email,
+      password: password
+    })
+    .then((resp) => {
+      console.log(resp)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  }
   return (
     <div className="basis-1/2 flex justify-center items-center">
-      <form className="flex flex-col gap-6 sm:gap-10 mt-10 sm:mt-8 md:mt-5 w-10/12 md:w-11/12 lg:w-10/12 xl:gap-8 xl:w-7/12 2xl:gap-10 2xl:w-6/12 ">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-6 sm:gap-10 mt-10 sm:mt-8 md:mt-5 w-10/12 md:w-11/12 lg:w-10/12 xl:gap-8 xl:w-7/12 2xl:gap-10 2xl:w-6/12 ">
         <h1 className="text-3xl md:text-4xl text-primary600 font-extrabold md:mb-5 2xl:mt-10">HELLO, WELCOME!</h1>
 
         <div className="flex flex-col">
           <Label id='uname' text='Username/Email' />
-          <Input type='email' id='uname' holder='Enter your Email' />
+          <Input type='email' id='uname' holder='Enter your Email' setEmail={setEmail} />
         </div>
 
         <div className="flex flex-col">
           <Label id='pwd' text='Password' />
-          <Input type='password' id='pwd' holder='Enter your Password' />
+          <Input type='password' id='pwd' holder='Enter your Password' setPassword= {setPassword} />
           <a href="" className="self-end mt-8 text-md md:text-xl xl:text-base font-bold text-primary500">Forget Password</a>
         </div>
 
         <div className="flex flex-col">
-          <PrimaryButton>
+          <PrimaryButton type='submit'>
             Log In
           </PrimaryButton>
           <div className="flex justify-center items-center gap-3 my-5">
