@@ -12,7 +12,7 @@ const Navbar = () => {
         <img src={logo} alt="" />
         <ul className='hidden md:flex gap-14 md:gap-7 text-base'>
         <Link to='/' className='hover:font-bold transition-all duration-200'>
-          <li>Home</li>
+          <li>Beranda</li>
         </Link>
         <li>Mentoring</li>
         <Link to='/course' className='hover:font-bold transition-all duration-200'>
