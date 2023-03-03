@@ -4,7 +4,7 @@ import Navbar from './Navbar'
 
 const WebLayout = ({children}) => {
   return (
-    <div>
+    <div className='bg-neutral-100'>
       <Navbar />
         <div className='h-max'>
           {children}

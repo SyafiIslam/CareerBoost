@@ -7,6 +7,7 @@ import logoMagang from '../assets/Home/logo-magang.svg'
 import mentor from '../assets/Home/mentor.svg'
 import sertifikat from '../assets/Home/sertif.svg'
 import magang from '../assets/Home/magang.svg'
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -98,11 +99,13 @@ const Home = () => {
               Lorem ipsum dolor sit amet consectetur. Pulvinar sed est dignissim sem. Tortor integer blandit lectus enim. Ultrices at et platea eget nisl aliquet. Accumsan nam neque et maecenas. Urna commodo sagittis nisi nascetur in duis. Accumsan nibh dictum mauris enim ridiculus massa et volutpat. Est lectus odio commodo massa id. Egestas hendrerit pellentesque ullamcorper eleifend cursus. Amet augue augue praesent pellentesque semper eu aliquet volutpat. Sed nec aenean imperdiet tortor massa eu tincidunt risus fames. Iaculis aliquet risus porta faucibus molestie mi habitant.
             </p>
             <div className="mx-auto">
-              <button className=" bg-primary400 text-base text-white font-bold py-3 px-5 md:py-4 md:px-8 rounded-3xl mt-4 hover:bg-primary500 transition-all duration-200">
-                <p className="text-sm md:text-xl">
-                  Explore
-                </p>
-              </button>
+              <Link to='/course'>
+                <button className=" bg-primary400 text-base text-white font-bold py-3 px-5 md:py-4 md:px-8 rounded-3xl mt-4 hover:bg-primary500 transition-all duration-200">
+                  <p className="text-sm md:text-xl">
+                    Explore
+                  </p>
+                </button>
+              </Link>
             </div>
           </div>
         </div>
