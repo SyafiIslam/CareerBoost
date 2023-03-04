@@ -1,7 +1,8 @@
 import React from "react";
 import Dropdown from "../layout/Dropdown";
 import WebLayout from "../layout/WebLayout";
-import PrimaryButton from '../components/button/PrimaryButton'
+import PrimaryButton from "../components/button/PrimaryButton";
+import { Link } from "react-router-dom";
 
 const CourseDetail = () => {
   return (
@@ -23,12 +24,12 @@ const CourseDetail = () => {
               <p className="text-neutral-400 p2">(1.006)</p>
             </div>
             <div className="flex lg:hidden my-5">
+              <Link to="/courseCheckout">
                 <PrimaryButton>
-                  <p className="p1">
-                    Daftar Sekarang
-                  </p>
+                  <p className="p1">Daftar Sekarang</p>
                 </PrimaryButton>
-              </div>
+              </Link>
+            </div>
           </div>
           <div className="py-4 px-8 mb-4">
             <h2 className="font-bold mb-2 h4">Intro</h2>
@@ -41,7 +42,9 @@ const CourseDetail = () => {
             </p>
           </div>
           <div className="flex flex-col py-4 px-8 mb-4">
-            <h2 className="font-bold mb-4 xl:mb-8 h4">Apa yang akan kamu pelajari</h2>
+            <h2 className="font-bold mb-4 xl:mb-8 h4">
+              Apa yang akan kamu pelajari
+            </h2>
             <div className="flex flex-wrap gap-2">
               <div className="bg-primary400 py-3 px-5 md:py-5 xl:py-3 rounded-lg text-white font-bold text-sm md:text-2xl xl:text-lg flex justify-center items-center gap-2 hover:shadow-lg hover:shadow-primary100 transition-all duration-300">
                 <p className="h6">HTML</p>
@@ -75,11 +78,11 @@ const CourseDetail = () => {
             <hr className="border-t-neutral-400" />
           </div>
           <p className="h6 text-secondary500 font-bold">Rp 239.000</p>
-          <PrimaryButton>
-            <p className="h6">
-              Daftar Sekarang
-            </p>
-          </PrimaryButton>
+          <Link to="/courseCheckout">
+            <PrimaryButton>
+              <p className="p1">Daftar Sekarang</p>
+            </PrimaryButton>
+          </Link>
         </div>
       </div>
     </WebLayout>
