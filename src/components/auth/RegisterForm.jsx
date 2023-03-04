@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Select from "react-select";
 import PrimaryButton from "../button/PrimaryButton";
-import Interest from "../interest/Interest";
+import Interest from "../../data/Interest";
 import Input from "./Input";
 import Label from "./Label";
 

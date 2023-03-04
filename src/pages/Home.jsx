@@ -1,5 +1,5 @@
 import React from "react";
-import WebLayout from "../components/layout/WebLayout";
+import WebLayout from "../layout/WebLayout";
 import jumbo from "../assets/Home/jumbotron.svg";
 import logoMentor from "../assets/Home/logo-mentor.svg";
 import logoCourse from "../assets/Home/logo-course.svg";
@@ -15,10 +15,10 @@ const Home = () => {
     <WebLayout>
       <div className="mt-8 p-4 xl:p-10 flex flex-col xl:flex-row xl:items-center xl:justify-evenly xl:gap-28">
         <div className="flex flex-col basis-7/12">
-          <h1 className="text-primary500 font-bold text-2xl md:text-4xl xl:text-5xl text-center xl:text-left">
+          <h1 className="text-primary500 font-bold h2 text-center xl:text-left">
             Temukan program penunjang karir Sesuai bidang keminatanmu
           </h1>
-          <p className="text-primary500 font-medium text-base md:text-xl xl:text-2xl text-justify xl:text-left mt-8">
+          <p className="text-primary500 font-medium h5 text-justify xl:text-left mt-8">
             Kamu dapat belajar langsung dengan para mentor yang berkompeten,
             menambah portofolio, dan temukan program magang yang sesuai dengan
             bidangmu!
@@ -34,8 +34,8 @@ const Home = () => {
         <div className=" py-7 mt-8 bg-primary400 flex flex-col items-center justify-center md:flex-row gap-8 text-white xl:px-10">
           <div className="flex flex-col justify-center items-center gap-5">
             <div className="flex flex-col justify-center items-center">
-              <img className="w-3/5" src={logoMentor} />
-              <h3 className="font-bold text-sm md:text-lg xl:text-2xl mt-4">
+              <img className="w-2/5" src={logoMentor} />
+              <h3 className="font-bold h4  mt-4">
                 Program Mentoring
               </h3>
             </div>
@@ -46,8 +46,8 @@ const Home = () => {
           </div>
           <div className="flex flex-col justify-center items-center gap-5">
             <div className="flex flex-col justify-center items-center">
-              <img className="w-4/5" src={logoCourse} />
-              <h3 className="font-bold text-sm md:text-lg xl:text-2xl mt-4">
+              <img className="w-3/5" src={logoCourse} />
+              <h3 className="font-bold h4 mt-4">
                 Online Course
               </h3>
             </div>
@@ -58,8 +58,8 @@ const Home = () => {
           </div>
           <div className="flex flex-col justify-center items-center gap-5">
             <div className="flex flex-col justify-center items-center">
-              <img className="w-4/5 xl:w-3/5" src={logoMagang} />
-              <h3 className="font-bold text-sm md:text-lg xl:text-2xl mt-4">
+              <img className="w-3/5 xl:w-2/5" src={logoMagang} />
+              <h3 className="font-bold h4 mt-4">
                 Program Magang
               </h3>
             </div>
@@ -77,7 +77,7 @@ const Home = () => {
             <img className="w-3/5" src={mentor} />
           </div>
           <div className="flex flex-col basis xl:basis-1/2">
-            <h2 className="text-xl md:text-2xl xl:text-3xl text-primary400 text-center xl:text-left font-bold mt-4 mb-3">
+            <h2 className="h4 text-primary400 text-center xl:text-left font-bold mt-4 mb-3">
               Mentor yang berkompeten di bidangnya
             </h2>
             <p className="mb-4 text-xs md:text-xl xl:text-base text-justify md:text-center xl:text-left  text-neutral-500">
@@ -107,10 +107,10 @@ const Home = () => {
             <img className="w-3/5" src={sertifikat} />
           </div>
           <div className="flex flex-col items-end justify-end xl:basis-1/2">
-            <h2 className="text-xl md:text-2xl xl:text-3xl text-primary400 text-center xl:text-right font-bold mt-4 mb-3">
+            <h2 className="h4 text-primary400 text-center xl:text-right font-bold mt-4 mb-3">
               Kursus online bersertifikat
             </h2>
-            <p className="mb-4 text-xs md:text-xl xl:text-base text-justify md:text-center xl:text-right text-neutral-500">
+            <p className="mb-4 p1 text-justify md:text-center xl:text-right text-neutral-500">
               Lorem ipsum dolor sit amet consectetur. Pulvinar sed est dignissim
               sem. Tortor integer blandit lectus enim. Ultrices at et platea
               eget nisl aliquet. Accumsan nam neque et maecenas. Urna commodo
@@ -135,10 +135,10 @@ const Home = () => {
             <img className="w-3/5" src={magang} />
           </div>
           <div className="flex flex-col xl:basis-1/2">
-            <h2 className="text-xl md:text-2xl xl:text-3xl text-primary400 text-center xl:text-left font-bold mt-4 mb-3">
+            <h2 className="h4 text-primary400 text-center xl:text-left font-bold mt-4 mb-3">
               Rekomendasi program magang sesuai bidang minatmu
             </h2>
-            <p className="mb-4 text-xs md:text-xl xl:text-base text-justify md:text-center xl:text-left text-neutral-500">
+            <p className="mb-4 p1 text-justify md:text-center xl:text-left text-neutral-500">
               Lorem ipsum dolor sit amet consectetur. Pulvinar sed est dignissim
               sem. Tortor integer blandit lectus enim. Ultrices at et platea
               eget nisl aliquet. Accumsan nam neque et maecenas. Urna commodo

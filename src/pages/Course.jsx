@@ -1,20 +1,19 @@
 import React from "react";
-import WebLayout from "../components/layout/WebLayout";
+import WebLayout from "../layout/WebLayout";
 import jumbo from "../assets/course/jumbo.svg";
 import icon from "../assets/course/search.svg";
-import Card from "../components/layout/Card";
+import Card from "../layout/Card";
 
 const Course = () => {
   return (
     <WebLayout>
       <div className="mt-8 p-4 xl:px-16 flex flex-col xl:flex-row xl:items-center xl:justify-evenly xl:gap-28">
         <div className="flex flex-col gap-5 xl:w-6/12">
-          <h1 className="text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-primary600 text-center xl:text-left">
+          <h1 className="h3 font-bold text-primary600 text-center xl:text-left">
             Kursus Online Bersertifikat Disertai Mini Project untuk Menambah Portofolio
           </h1>
-          <p className="text-neutral-600 text-center xl:text-left text-lg md:text-xl xl:text-2xl">
-            Lorem ipsum dolor sit amet consectetur. Purus euismod arcu posuere ut. Lacus fringilla mi neque netus ut ullamcorper commodo habitasse
-            ut. Suspendisse quis eu sem neque in. Nulla porta mollis enim pellentesque. At pulvinar sed sed vestibulum duis pretium enim. Et nec malesuada eget nam velit et. Iaculis sagittis id nisi pretium iaculis at eu.
+          <p className="text-neutral-600 text-center xl:text-left h6">
+            Mini Project sesuai kursus online yang kamu ambil, jadikan portofolio untuk melamar magang dan pekerjaan!
           </p>
         </div>
 
@@ -33,8 +32,8 @@ const Course = () => {
       </div>
 
       <div className="flex items-center justify-between mt-8 p-4 md:p-10">
-        <h2 className="font-bold text-neutral-900 text-xl md:text-3xl xl:text-4xl">Recommended</h2>
-        <p className="text-primary500 text-lg md:text-xl xl:text-3xl">
+        <h2 className="font-bold text-neutral-900 h3">Recommended</h2>
+        <p className="text-primary500 h4">
           See All
         </p>
       </div>
@@ -44,7 +43,7 @@ const Course = () => {
       </div>
 
       <div className="flex items-center justify-between mt-8 p-4 md:p-10">
-        <h2 className="font-bold text-neutral-900 text-xl md:text-3xl xl:text-4xl">Front End Developer</h2>
+        <h2 className="font-bold text-neutral-900 h3">Front End Developer</h2>
         <p className="text-primary500 text-lg md:text-xl xl:text-3xl">
           See All
         </p>

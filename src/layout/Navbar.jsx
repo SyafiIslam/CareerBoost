@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import avatar from "../../assets/Navbar/avatar.svg";
-import logo from "../../assets/Navbar/Logo.svg";
+import avatar from "../assets/Navbar/avatar.svg";
+import logo from "../assets/Navbar/Logo.svg";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
-import navList from "../../data/Navlist.json";
+import navList from "../data/Navlist.json";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [hidden, setHidden] = useState("true");
 
   return (
-    <div className="flex py-4 px-4 text-lg z-10 font-medium justify-between items-center shadow-md sticky top-0 bg-white ">
+    <div className="flex py-4 px-4 text-lg z-50 font-medium justify-between items-center shadow-md sticky top-0 bg-white ">
       <div className="flex gap-12 md:gap-8 items-center w-5/12 md:w-2/12 xl:w-12/12">
         <img src={logo} alt="" />
 

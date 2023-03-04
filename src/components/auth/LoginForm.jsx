@@ -15,19 +15,19 @@ const LoginForm = () => {
   const handleSubmit= (e) => {
     e.preventDefault()
 
-    if(email === data.email && password === data.password) {
-      window.localStorage.setItem('token', data.token)
-    }
-    // axios.post('https://tweet-api.up.railway.app/api/v1/auth/login', {
-    //   email: email,
-    //   password: password
-    // })
-    // .then((resp) => {
-    //   console.log(resp)
-    // })
-    // .catch((err) => {
-    //   console.log(err)
-    // })
+    // if(email === data.email && password === data.password) {
+    //   window.localStorage.setItem('token', data.token)
+    // }
+    axios.post('https://tweet-api.up.railway.app/api/v1/auth/login', {
+      email: email,
+      password: password
+    })
+    .then((resp) => {
+      console.log(resp)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
   }
   return (
     <div className="basis-1/2 flex justify-center items-center">
