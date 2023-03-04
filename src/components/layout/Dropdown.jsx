@@ -9,17 +9,19 @@ const Dropdown = () => {
         onClick={() => {
           setClicked(!clicked);
         }}
-        className="flex justify-between border border-neutral-400 p-4 rounded-full "
+        className="flex border border-neutral-400 p-4 rounded-full "
       >
-        <div className="flex items-center text-sm gap-2">
-          {clicked ? (
-            <IoMdArrowDropup className="text-xl" />
-          ) : (
-            <IoMdArrowDropdown className="text-xl" />
-          )}
-          <p>HTML Dasar</p>
-          <div className="flex">
-            <p className="hidden md:block text-sm">
+        <div className="flex justify-center items-center text-sm ">
+          <div className="flex gap-2">
+            {clicked ? (
+              <IoMdArrowDropup className="text-xl" />
+            ) : (
+              <IoMdArrowDropdown className="text-xl" />
+            )}
+            <p>HTML Dasar</p>
+          </div>
+          <div>
+            <p className="hidden  text-sm">
               5 video pembelajaran 4 jam 35 menit
             </p>
           </div>
