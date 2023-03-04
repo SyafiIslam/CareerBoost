@@ -9,7 +9,7 @@ const Dropdown = () => {
         onClick={() => {
           setClicked(!clicked);
         }}
-        className={`${clicked && "bg-primary400"} flex border border-neutral-400 mb-1 py-2 px-2 rounded-full hover:bg-primary400 transition-all duration-200`}
+        className={`${clicked && "bg-primary400"} flex border border-neutral-400 mb-1 py-2 px-2 rounded-full hover:bg-primary400 transition-all duration-200 cursor-pointer`}
       >
         <div className="flex justify-between items-center text-sm w-full">
           <div className="flex gap-2 w-fit">

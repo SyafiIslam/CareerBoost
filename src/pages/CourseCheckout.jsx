@@ -56,7 +56,7 @@ const CourseCheckout = () => {
           </div>
         </div>
         <div className="flex xl:hidden">
-          <Link className="mx-auto" to="/courseCheckout">
+          <Link className="mx-auto" to="/courseConfirm">
             <PrimaryButton>
               <p className="h5">Checkout</p>
             </PrimaryButton>
@@ -84,7 +84,7 @@ const CourseCheckout = () => {
             <span className="text-primary400">ketentuan layanan</span>{" "}
             CareerBoost
           </p>
-          <Link className="mx-auto" to="/courseCheckout">
+          <Link className="mx-auto" to="/courseConfirm">
             <PrimaryButton>
               <p className="h5">Checkout</p>
             </PrimaryButton>
