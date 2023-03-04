@@ -5,6 +5,7 @@ import CourseCheckout from '../pages/CourseCheckout'
 import CourseConfirm from '../pages/CourseConfirm'
 import CourseDetail from '../pages/CourseDetail'
 import Home from '../pages/Home'
+import Lesson from '../pages/Lesson'
 import Login from '../pages/Login'
 import Register from '../pages/Register'
 
@@ -19,6 +20,7 @@ const MainRoute = () => {
         <Route path='/courseDetail' element={<CourseDetail />} />
         <Route path='/courseCheckout' element={<CourseCheckout />} />
         <Route path='/courseConfirm' element={<CourseConfirm />} />
+        <Route path='/lesson' element={<Lesson />} />
       </Routes>
     </>
   )

@@ -3,30 +3,30 @@ import React from 'react'
 const Footer = () => {
   return (
     <div className='flex flex-col text-white bg-primary400 mt-8'>
-      <div className='hidden md:flex pt-8 xl:gap-7 2xl:gap-80 text-center'>
-        <div className='flex flex-col gap-5 basis-1/3 justify-start items-center'>
-          <h1 className='font-bold md:text-xl xl:text-2xl'>
+      <div className='md:flex pt-8 xl:gap-7 2xl:gap-80 text-center'>
+        <div className='flex flex-col gap-2 md:gap-5 basis-1/3 justify-start items-center'>
+          <h1 className='font-bold h5'>
             Contact Us
           </h1>
-          <p>careerboost@gmail.com</p>
-          <p>Ketawanggede, Kec. Lowokwaru</p>
-          <p>Kota Malang, Jawa Timur 65145</p>
+          <p className='p1'>careerboost@gmail.com</p>
+          <p className='p1'>Ketawanggede, Kec. Lowokwaru</p>
+          <p className='p1'>Kota Malang, Jawa Timur 65145</p>
         </div>
-        <div className='flex flex-col gap-5 basis-1/3 justify-center items-center'>
-          <h1 className='font-bold md:text-xl xl:text-2xl'>
-            Contact Us
+        <div className=' hidden md:flex flex-col gap-5 basis-1/3 justify-center items-center'>
+          <h1 className='font-bold h5'>
+            Our Product
           </h1>
-          <p>careerboost@gmail.com</p>
-          <p>Ketawanggede, Kec. Lowokwaru</p>
-          <p>Kota Malang, Jawa Timur 65145</p>
+          <p className='p1'>Mentororing Program</p>
+          <p className='p1'>Internship Program</p>
+          <p className='p1'>Online Course</p>
         </div>
-        <div className='flex flex-col gap-5 basis-1/3 justify-center items-center'>
-          <h1 className='font-bold md:text-xl xl:text-2xl'>
-            Contact Us
+        <div className='hidden md:flex flex-col gap-5 basis-1/3 justify-center items-center'>
+          <h1 className='font-bold h5v'>
+            Customer Care
           </h1>
-          <p>careerboost@gmail.com</p>
-          <p>Ketawanggede, Kec. Lowokwaru</p>
-          <p>Kota Malang, Jawa Timur 65145</p>
+          <p className='p1'>FAQs</p>
+          <p className='p1'>Terms of Service</p>
+          <p className='p1'>Privacy Policy</p>
         </div>
       </div>
 

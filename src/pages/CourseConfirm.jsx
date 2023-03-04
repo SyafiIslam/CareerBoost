@@ -11,7 +11,7 @@ const CourseConfirm = () => {
           <p className="h4 font-medium text-center xl:text-left">
             Checkout Berhasil, Kamu dapat mengakses Kursus
           </p>
-          <Link>
+          <Link to='/lesson'>
             <p className="h4 font-bold text-primary400 text-center">
               Intro to Website Development
             </p>

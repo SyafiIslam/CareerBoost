@@ -58,7 +58,7 @@ const CourseDetail = () => {
             </div>
           </div>
           <div className="flex flex-col py-4 px-8 mb-4">
-            <h2 className="font-bold mb-2 text-xl">Konten Kursus</h2>
+            <h2 className="font-bold mb-2 h4">Konten Kursus</h2>
             <Dropdown />
             <Dropdown />
             <Dropdown />
