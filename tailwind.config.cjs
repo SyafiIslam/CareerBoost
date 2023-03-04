@@ -6,6 +6,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        searchIcon: "url('/src/assets/course/search.svg')",
+        courseBg: "url('/src/assets/courseDetail/jumbo.svg')"
+      },
       colors: {
         // Neutral
         neutral50: '#F8FAFC',

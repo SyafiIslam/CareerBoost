@@ -2,7 +2,6 @@ import React from "react";
 import WebLayout from "../components/layout/WebLayout";
 import jumbo from "../assets/course/jumbo.svg";
 import icon from "../assets/course/search.svg";
-import thumbnail from "../assets/course/thumbnail.svg";
 import Card from "../components/layout/Card";
 
 const Course = () => {
@@ -24,13 +23,13 @@ const Course = () => {
         </div>
       </div>
 
-      <div className="flex justify-center mt-10">
-        <img src={icon} className="w-6 absolute left-0" alt="" />
+      <div className="flex justify-center flex-row-reverse mt-10">
         <input
           type="text"
           placeholder="Search"
-          className="w-10/12 py-2 px-3 xl:py-6 pl-12 border border-neutral-700 rounded-full focus:outline-none bg-neutral-100 xl:text-2xl xl:w-8/12"
+          className="w-10/12 py-2 px-3 xl:py-6 xl:px-20 pl-12 border border-neutral-700 rounded-full focus:outline-none bg-neutral-100 xl:text-2xl xl:w-8/12 "
         />
+        <img src={icon} className="w-6 -mr-10 xl:-mr-16 scale-75 xl:scale-100 relative" alt="" />
       </div>
 
       <div className="flex items-center justify-between mt-8 p-4 md:p-10">
@@ -41,9 +40,7 @@ const Course = () => {
       </div>
 
       <div className="flex justify-center gap-10 flex-wrap mt-8">
-        {[1, 2, 3, 4].map((index) => {
-          return <Card key={index} />
-        })}
+        <Card />
       </div>
 
       <div className="flex items-center justify-between mt-8 p-4 md:p-10">
@@ -54,9 +51,7 @@ const Course = () => {
       </div>
 
       <div className="flex justify-center gap-10 flex-wrap mt-8 p-4">
-        {[1, 2, 3, 4].map((index) => {
-          return <Card key={index} />
-        })}
+        <Card />
       </div>
     </WebLayout>
   );

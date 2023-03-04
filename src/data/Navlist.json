@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Beranda",
+    "path": "/"
+  },
+  {
+    "name": "Mentoring",
+    "path": "/mentoring"
+  },
+  {
+    "name": "Course",
+    "path": "/course"
+  },
+  {
+    "name": "Magang",
+    "path": "/magang"
+  }
+]

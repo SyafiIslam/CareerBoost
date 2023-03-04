@@ -1,40 +1,78 @@
-import React from 'react'
-import avatar from '../../assets/Navbar/avatar.svg'
-import logo from '../../assets/Navbar/Logo.svg'
+import React, { useState } from "react";
+import avatar from "../../assets/Navbar/avatar.svg";
+import logo from "../../assets/Navbar/Logo.svg";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { Link } from 'react-router-dom';
+import { RxCross2 } from "react-icons/rx";
+import navList from "../../data/Navlist.json";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [hidden, setHidden] = useState("true");
+
   return (
-    <div className='flex py-4 px-4 text-lg font-medium justify-between items-center shadow-md sticky top-0 bg-white '>
-      <div className='flex gap-12 md:gap-8 items-center w-5/12 md:w-2/12 xl:w-12/12'>
+    <div className="flex py-4 px-4 text-lg z-10 font-medium justify-between items-center shadow-md sticky top-0 bg-white ">
+      <div className="flex gap-12 md:gap-8 items-center w-5/12 md:w-2/12 xl:w-12/12">
         <img src={logo} alt="" />
-        <ul className='hidden md:flex gap-14 md:gap-7 text-base'>
-        <Link to='/' className='hover:font-bold transition-all duration-200'>
-          <li>Beranda</li>
-        </Link>
-        <li>Mentoring</li>
-        <Link to='/course' className='hover:font-bold transition-all duration-200'>
-        <li>Course</li>
-          </Link>
-        <li>internship</li>
-      </ul>
+
+        <ul className="hidden md:flex gap-14 md:gap-7 text-base">
+          {navList.map((list, index) => {
+            return (
+              <Link
+                key={index}
+                to={list.path}
+                className="hover:font-bold transition-all duration-200"
+              >
+                <li>{list.name}</li>
+              </Link>
+            );
+          })}
+        </ul>
+
+        <div
+          id="menu"
+          className={`absolute flex-col items-center self-start ${
+            hidden ? "hidden" : "flex"
+          } py-8 mt-16 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md`}
+        >
+          {navList.map((list, index) => {
+            return (
+              <ul key={index}>
+                <Link
+                  to={list.path}
+                  className="hover:font-bold transition-all duration-200"
+                  onClick={() => {
+                    setHidden(!hidden);
+                  }}
+                >
+                  <li>{list.name}</li>
+                </Link>
+              </ul>
+            );
+          })}
+          <Link
+                  to='/profile'
+                  className="hover:font-bold transition-all duration-200"
+                  onClick={() => {
+                    setHidden(!hidden);
+                  }}
+                >
+                  <li className="list-none">Profile</li>
+                </Link>
+        </div>
       </div>
-      <div className='hidden md:flex items-center gap-5 md:gap-2'>
+      <div className="hidden md:flex items-center gap-5 md:gap-2">
         <IoMdArrowDropdown />
-        <p className='text-base'>
-          Muhammad Zidan
-        </p>
-        <img src={avatar} className='md:w-2/12' />
+        <p className="text-base">Muhammad Zidan</p>
+        <img src={avatar} className="md:w-2/12" />
       </div>
-      <div className='md:hidden'>
+      <div className="md:hidden">
         <button>
-        <GiHamburgerMenu />
+          {hidden ? <GiHamburgerMenu onClick={() => {setHidden(!hidden)}} /> : <RxCross2 onClick={() => {setHidden(!hidden)}} />}
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
