@@ -20,11 +20,9 @@ const Dropdown = () => {
             )}
             <p className="p1">HTML Dasar</p>
           </div>
-          <div className="hidden md:block w-fit text-right ">
-            <p className="p2">
+            <p className="p2 hidden md:block">
               5 video pembelajaran 4 jam 35 menit
             </p>
-          </div>
         </div>
       </div>
       <div
