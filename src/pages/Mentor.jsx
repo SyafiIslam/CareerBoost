@@ -78,7 +78,7 @@ const Mentor = () => {
                 </p>
               </div>
             </div>
-            <div className="flex justify-center flex-col items-center w-max xl:w-max gap-8">
+            <div className="flex justify-center flex-col mx-auto items-center w-max xl:w-max gap-8">
               <MentorAll />
             </div>
           </div>
