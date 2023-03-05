@@ -1,0 +1,47 @@
+[
+  {
+    "avatar": "/src/assets/mentoring/avatar.svg",
+    "name": "Muhammad Messi ",
+    "work": "Work at PT.Bank Rakyat Indonesia as Front End Developer",
+    "lokasi": "Bandung, Jawa Barat",
+    "rate": "⭐⭐⭐⭐⭐",
+    "desc": "Bekerja sebagai Front End Developer di PT.Bank Rakyat Indonesia tbk. Menguasai framework angular, tailwind, bootstrap, dan sejenisnya.",
+    "bidang": ["Front End Developer", "Web Developer"],
+    "skill": ["HTML", "CSS", "Javascript"],
+    "exp": {
+      "logo": "/src/assets/mentoring/logo.svg",
+      "skill": "Front End",
+      "perusahaan": "at PT.Bank Rakyat Indonesia"
+    }
+  },
+  {
+    "avatar": "/src/assets/mentoring/avatar.svg",
+    "name": "Muhammad Messi ",
+    "work": "Work at PT.Bank Rakyat Indonesia as Front End Developer",
+    "lokasi": "Bandung, Jawa Barat",
+    "rate": "⭐⭐⭐⭐⭐",
+    "desc": "Bekerja sebagai Front End Developer di PT.Bank Rakyat Indonesia tbk. Menguasai framework angular, tailwind, bootstrap, dan sejenisnya.",
+    "bidang": ["Front End Developer", "Web Developer"],
+    "skill": ["HTML", "CSS", "Javascript"],
+    "exp": {
+      "logo": "/src/assets/mentoring/logo.svg",
+      "skill": "Front End",
+      "perusahaan": "at PT.Bank Rakyat Indonesia"
+    }
+  },
+  {
+    "avatar": "/src/assets/mentoring/avatar.svg",
+    "name": "Muhammad Messi ",
+    "work": "Work at PT.Bank Rakyat Indonesia as Front End Developer",
+    "lokasi": "Bandung, Jawa Barat",
+    "rate": "⭐⭐⭐⭐⭐",
+    "desc": "Bekerja sebagai Front End Developer di PT.Bank Rakyat Indonesia tbk. Menguasai framework angular, tailwind, bootstrap, dan sejenisnya.",
+    "bidang": ["Front End Developer", "Web Developer"],
+    "skill": ["HTML", "CSS", "Javascript"],
+    "exp": {
+      "logo": "/src/assets/mentoring/logo.svg",
+      "skill": "Front End",
+      "perusahaan": "at PT.Bank Rakyat Indonesia"
+    }
+  }
+]
