@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Google.inc",
+    "logo": "/src/assets/magang/google.svg",
+    "bidang": "Front End Developer",
+    "lokasi": "Bandung, Indonesia",
+    "kategori": ["HTML", "CSS", "JS", "React", "Vue"],
+    "postedAt": "4 days ago",
+    "applied": 14,
+    "jenis": "WFH"
+  },
+  {
+    "name": "Spotify.co",
+    "logo": "/src/assets/magang/spotify.svg",
+    "bidang": "UI/UX Designer",
+    "lokasi": "Jakarta, Indonesia",
+    "kategori": ["HTML", "CSS", "JS", "React", "Vue"],
+    "postedAt": "6 days ago",
+    "applied": 15, 
+    "jenis": "WFO"
+  },
+  {
+    "name": "Facebook.co",
+    "logo": "/src/assets/magang/facebook.svg",
+    "bidang": "Back End Developer",
+    "lokasi": "Semarang, Jawa Tengah",
+    "kategori": ["PHP", "Laravel"],
+    "postedAt": "1 week ago",
+    "applied": 18, 
+    "jenis": "Hybrid"
+  }
+]

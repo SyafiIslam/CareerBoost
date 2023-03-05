@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import course from "../data/Courses.json";
+import course from "../../data/Courses.json";
 
 const Card = () => {
   return (

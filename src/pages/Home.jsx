@@ -81,15 +81,7 @@ const Home = () => {
               Mentor yang berkompeten di bidangnya
             </h2>
             <p className="mb-4 text-xs md:text-xl xl:text-base text-justify md:text-center xl:text-left  text-neutral-500">
-              Lorem ipsum dolor sit amet consectetur. Pulvinar sed est dignissim
-              sem. Tortor integer blandit lectus enim. Ultrices at et platea
-              eget nisl aliquet. Accumsan nam neque et maecenas. Urna commodo
-              sagittis nisi nascetur in duis. Accumsan nibh dictum mauris enim
-              ridiculus massa et volutpat. Est lectus odio commodo massa id.
-              Egestas hendrerit pellentesque ullamcorper eleifend cursus. Amet
-              augue augue praesent pellentesque semper eu aliquet volutpat. Sed
-              nec aenean imperdiet tortor massa eu tincidunt risus fames.
-              Iaculis aliquet risus porta faucibus molestie mi habitant.
+            Berbagai mentor yang berpengalaman dan memiliki keahlian beragam. Temukan mentormu dan asah skill sesuai dengan keminatanmu!
             </p>
             <div className="mx-auto xl:mx-0">
             <Link className="mt-4" to='/mentor'>
@@ -106,20 +98,12 @@ const Home = () => {
           <div className="flex justify-center xl:basis-1/2">
             <img className="w-3/5" src={sertifikat} />
           </div>
-          <div className="flex flex-col items-end justify-end xl:basis-1/2">
+          <div className="flex flex-col xl:items-end xl:justify-end xl:basis-1/2">
             <h2 className="h4 text-primary400 text-center xl:text-right font-bold mt-4 mb-3">
               Kursus online bersertifikat
             </h2>
             <p className="mb-4 p1 text-justify md:text-center xl:text-right text-neutral-500">
-              Lorem ipsum dolor sit amet consectetur. Pulvinar sed est dignissim
-              sem. Tortor integer blandit lectus enim. Ultrices at et platea
-              eget nisl aliquet. Accumsan nam neque et maecenas. Urna commodo
-              sagittis nisi nascetur in duis. Accumsan nibh dictum mauris enim
-              ridiculus massa et volutpat. Est lectus odio commodo massa id.
-              Egestas hendrerit pellentesque ullamcorper eleifend cursus. Amet
-              augue augue praesent pellentesque semper eu aliquet volutpat. Sed
-              nec aenean imperdiet tortor massa eu tincidunt risus fames.
-              Iaculis aliquet risus porta faucibus molestie mi habitant.
+            Kursus online dengan konten sesuai roadmap yang dapat membantumu menambah pengetahuan untuk terjun ke dunia kerja
             </p>
             <div className="mx-auto w-max xl:m-0">
               <Link className="mt-4" to="/course">
@@ -139,15 +123,7 @@ const Home = () => {
               Rekomendasi program magang sesuai bidang minatmu
             </h2>
             <p className="mb-4 p1 text-justify md:text-center xl:text-left text-neutral-500">
-              Lorem ipsum dolor sit amet consectetur. Pulvinar sed est dignissim
-              sem. Tortor integer blandit lectus enim. Ultrices at et platea
-              eget nisl aliquet. Accumsan nam neque et maecenas. Urna commodo
-              sagittis nisi nascetur in duis. Accumsan nibh dictum mauris enim
-              ridiculus massa et volutpat. Est lectus odio commodo massa id.
-              Egestas hendrerit pellentesque ullamcorper eleifend cursus. Amet
-              augue augue praesent pellentesque semper eu aliquet volutpat. Sed
-              nec aenean imperdiet tortor massa eu tincidunt risus fames.
-              Iaculis aliquet risus porta faucibus molestie mi habitant.
+            Tambah pengalaman magangmu dengan berbagai perusahaan ternama dan raih kesempatan bekerja di perusahaan
             </p>
             <div className="mx-auto xl:mx-0">
               <Link className="mt-4" to="/magang">

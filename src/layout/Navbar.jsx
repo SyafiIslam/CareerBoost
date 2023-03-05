@@ -45,7 +45,7 @@ const Navbar = () => {
                     setHidden(!hidden);
                   }}
                 >
-                  <li>{list.name}</li>
+                  <li className="h5">{list.name}</li>
                 </Link>
               </ul>
             );
@@ -57,7 +57,7 @@ const Navbar = () => {
                     setHidden(!hidden);
                   }}
                 >
-                  <li className="list-none">Profile</li>
+                  <li className="h5 list-none">Profile</li>
                 </Link>
         </div>
       </div>

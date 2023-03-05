@@ -9,14 +9,14 @@ const Dropdown = () => {
         onClick={() => {
           setClicked(!clicked);
         }}
-        className={`${clicked && "bg-primary400"} flex border border-neutral-400 mb-1 py-2 px-2 rounded-full hover:bg-primary400 transition-all duration-200 cursor-pointer`}
+        className={`${clicked && "bg-primary400"} flex border border-neutral-400 mb-1 py-4 px-12 rounded-full hover:bg-primary400 transition-all duration-200 cursor-pointer`}
       >
         <div className="flex justify-between items-center text-sm w-full">
-          <div className="flex gap-2 w-fit">
+          <div className="flex gap-4 w-fit items-center">
             {clicked ? (
-              <IoMdArrowDropup className="text-xl" />
+              <IoMdArrowDropup className="text-xl xl:text-3xl" />
             ) : (
-              <IoMdArrowDropdown className="text-xl" />
+              <IoMdArrowDropdown className="text-xl xl:text-3xl" />
             )}
             <p className="p1">HTML Dasar</p>
           </div>
@@ -31,11 +31,11 @@ const Dropdown = () => {
         } flex-col  border-2 border-neutral-50 bg-neutral-50 rounded-3xl`}
       >
         <ul>
-          <p className="p1">Pemgenalan</p>
-          <p className="p1">HTML dasar : tag</p>
-          <p className="p1">HTML dasar : paragraf</p>
-          <p className="p1">HTML dasar : heading</p>
-          <p className="p1">HTML dasar : list</p>
+          <p className="p1 text-neutral-700">Pemgenalan</p>
+          <p className="p1 text-neutral-700">HTML dasar : tag</p>
+          <p className="p1 text-neutral-700">HTML dasar : paragraf</p>
+          <p className="p1 text-neutral-700">HTML dasar : heading</p>
+          <p className="p1 text-neutral-700">HTML dasar : list</p>
         </ul>
       </div>
     </>

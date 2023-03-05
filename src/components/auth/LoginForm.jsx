@@ -18,7 +18,7 @@ const LoginForm = () => {
     // if(email === data.email && password === data.password) {
     //   window.localStorage.setItem('token', data.token)
     // }
-    axios.post('https://tweet-api.up.railway.app/api/v1/auth/login', {
+    axios.post('http://103.189.235.157:10007/user/login', {
       email: email,
       password: password
     })
@@ -36,7 +36,7 @@ const LoginForm = () => {
 
         <div className="flex flex-col">
           <Label id='uname' text='Username/Email' />
-          <Input type='email' id='uname' holder='Enter your Email' setEmail={setEmail} />
+          <Input type='text' id='uname' holder='Enter your Email' setEmail={setEmail} />
         </div>
 
         <div className="flex flex-col">

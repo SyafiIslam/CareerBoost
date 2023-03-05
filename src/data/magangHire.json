@@ -1,0 +1,38 @@
+[
+  {
+    "logo": "/src/assets/magang/google.svg",
+    "bidang": "Front End Developer at PT.Halodek.com",
+    "postedAt": "3 days ago",
+    "duration": "4 month",
+    "jenis": "Work from office",
+    "applied": 23,
+    "desc": "Lorem ipsum dolor sit amet consectetur. Purus euismod arcu posuere ut. Lacus fringilla mi neque netus ut ullamcorper commodo habitasse ut.",
+    "rating": "⭐⭐⭐⭐⭐",
+    "lokasi": "Bandung, Jawa Barat, Indonesia",
+    "kategori": ["HTML", "CSS", "JS", "React", "Vue"]
+  },
+  {
+    "logo": "/src/assets/magang/google.svg",
+    "bidang": "Front End Developer at PT.Halodek.com",
+    "postedAt": "3 days ago",
+    "duration": "4 month",
+    "jenis": "Work from office",
+    "applied": 23,
+    "desc": "Lorem ipsum dolor sit amet consectetur. Purus euismod arcu posuere ut. Lacus fringilla mi neque netus ut ullamcorper commodo habitasse ut.",
+    "rating": "⭐⭐⭐⭐⭐",
+    "lokasi": "Bandung, Jawa Barat, Indonesia",
+    "kategori": ["HTML", "CSS", "JS", "React", "Vue"]
+  },
+  {
+    "logo": "/src/assets/magang/google.svg",
+    "bidang": "Front End Developer at PT.Halodek.com",
+    "postedAt": "3 days ago",
+    "duration": "4 month",
+    "jenis": "Work from office",
+    "applied": 23,
+    "desc": "Lorem ipsum dolor sit amet consectetur. Purus euismod arcu posuere ut. Lacus fringilla mi neque netus ut ullamcorper commodo habitasse ut.",
+    "rating": "⭐⭐⭐⭐⭐",
+    "lokasi": "Bandung, Jawa Barat, Indonesia",
+    "kategori": ["HTML", "CSS", "JS", "React", "Vue"]
+  }  
+]

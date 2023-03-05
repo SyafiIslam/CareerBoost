@@ -7,6 +7,8 @@ import CourseDetail from '../pages/CourseDetail'
 import Home from '../pages/Home'
 import Lesson from '../pages/Lesson'
 import Login from '../pages/Login'
+import Magang from '../pages/Magang'
+import MagangDetail from '../pages/MagangDetail'
 import Register from '../pages/Register'
 
 const MainRoute = () => {
@@ -21,6 +23,8 @@ const MainRoute = () => {
         <Route path='/courseCheckout' element={<CourseCheckout />} />
         <Route path='/courseConfirm' element={<CourseConfirm />} />
         <Route path='/lesson' element={<Lesson />} />
+        <Route path='/magang' element={<Magang />} />
+        <Route path='/magangDetail' element={<MagangDetail />} />
       </Routes>
     </>
   )

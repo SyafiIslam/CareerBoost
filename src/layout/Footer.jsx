@@ -21,7 +21,7 @@ const Footer = () => {
           <p className='p1'>Online Course</p>
         </div>
         <div className='hidden md:flex flex-col gap-5 basis-1/3 justify-center items-center'>
-          <h1 className='font-bold h5v'>
+          <h1 className='font-bold h5'>
             Customer Care
           </h1>
           <p className='p1'>FAQs</p>

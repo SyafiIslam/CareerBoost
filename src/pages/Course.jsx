@@ -2,7 +2,7 @@ import React from "react";
 import WebLayout from "../layout/WebLayout";
 import jumbo from "../assets/course/jumbo.svg";
 import icon from "../assets/course/search.svg";
-import Card from "../layout/Card";
+import Card from "../components/card/CourseCard";
 
 const Course = () => {
   return (
