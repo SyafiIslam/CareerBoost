@@ -21,7 +21,7 @@ const MentorInfo = () => {
             </div>
           </div>
           <Link to='/mentorCheckout'>
-            <button className="bg-primary400 text-white py-4 md:py-8 rounded-xl xl:w-full hover:shadow-lg hover:shadow-primary100 transition-all duration-300">
+            <button className="bg-primary400 text-white py-4 md:py-8 rounded-xl w-full hover:shadow-lg hover:shadow-primary100 transition-all duration-300">
               <p className="h5 font-bold">Jadikan Mentor</p>
             </button>
           </Link>

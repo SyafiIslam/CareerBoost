@@ -24,12 +24,12 @@ const Profile = () => {
             </div>
           </div>
           <Link>
-            <button className="bg-red-500 text-white py-4 md:py-8 rounded-xl xl:w-full shadow-md hover:shadow-xl hover:shadow-red-800 transition-all duration-300">
+            <button className="bg-red-500 text-white py-4 md:py-8 rounded-xl w-full shadow-md shadow-red-800 hover:shadow-lg hover:shadow-red-800 transition-all duration-300">
               <p className="h5 font-bold">Log out</p>
             </button>
           </Link>
         </div>
-        <div className=" py-6 px-8 bg-neutral-50 rounded-xl shadow-xl basis-9/12 h-max xl:mt-0">
+        <div className=" p-5 md:p-10 xl:py-16 xl:px-8 bg-neutral-50 rounded-xl shadow-xl basis-9/12 h-max xl:mt-0">
           <Outlet />
         </div>
       </div>

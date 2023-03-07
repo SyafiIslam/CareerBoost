@@ -40,8 +40,7 @@ const Home = () => {
               </h3>
             </div>
             <p className="text-xs md:text-lg text-center">
-              Lorem ipsum dolor sit amet consectetur. Massa nam massa ac commodo
-              suspendisse facilisis adipiscing.
+              Program mentoring dengan mentor berpengalaman sesuai ketertarikanmu
             </p>
           </div>
           <div className="flex flex-col justify-center items-center gap-5">
@@ -52,8 +51,7 @@ const Home = () => {
               </h3>
             </div>
             <p className="text-xs md:text-lg text-center">
-              Lorem ipsum dolor sit amet consectetur. Massa nam massa ac commodo
-              suspendisse facilisis adipiscing.
+              Berbagai online course bersertifikat dengan materi pembelajaran sesuai roadmap
             </p>
           </div>
           <div className="flex flex-col justify-center items-center gap-5">
@@ -64,8 +62,7 @@ const Home = () => {
               </h3>
             </div>
             <p className="text-xs md:text-lg text-center">
-              Lorem ipsum dolor sit amet consectetur. Massa nam massa ac commodo
-              suspendisse facilisis adipiscing.
+              Program internship bersetifikat oleh perusahaan-perusahaan ternama 
             </p>
           </div>
         </div>
@@ -80,7 +77,7 @@ const Home = () => {
             <h2 className="h4 text-primary400 text-center xl:text-left font-bold mt-4 mb-3">
               Mentor yang berkompeten di bidangnya
             </h2>
-            <p className="mb-4 text-xs md:text-xl xl:text-base text-justify md:text-center xl:text-left  text-neutral-500">
+            <p className="mb-4 text-xs md:text-xl xl:text-base text-center xl:text-left  text-neutral-500">
             Berbagai mentor yang berpengalaman dan memiliki keahlian beragam. Temukan mentormu dan asah skill sesuai dengan keminatanmu!
             </p>
             <div className="mx-auto xl:mx-0">
@@ -102,7 +99,7 @@ const Home = () => {
             <h2 className="h4 text-primary400 text-center xl:text-right font-bold mt-4 mb-3">
               Kursus online bersertifikat
             </h2>
-            <p className="mb-4 p1 text-justify md:text-center xl:text-right text-neutral-500">
+            <p className="mb-4 p1 text-center xl:text-right text-neutral-500">
             Kursus online dengan konten sesuai roadmap yang dapat membantumu menambah pengetahuan untuk terjun ke dunia kerja
             </p>
             <div className="mx-auto w-max xl:m-0">
@@ -122,7 +119,7 @@ const Home = () => {
             <h2 className="h4 text-primary400 text-center xl:text-left font-bold mt-4 mb-3">
               Rekomendasi program magang sesuai bidang minatmu
             </h2>
-            <p className="mb-4 p1 text-justify md:text-center xl:text-left text-neutral-500">
+            <p className="mb-4 p1 text-center xl:text-left text-neutral-500">
             Tambah pengalaman magangmu dengan berbagai perusahaan ternama dan raih kesempatan bekerja di perusahaan
             </p>
             <div className="mx-auto xl:mx-0">

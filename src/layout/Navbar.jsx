@@ -51,7 +51,7 @@ const Navbar = () => {
             );
           })}
           <Link
-            to="/profile"
+            to="/profile/data"
             className="hover:font-bold transition-all duration-200"
             onClick={() => {
               setHidden(!hidden);
@@ -61,7 +61,7 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-      <Link to='/profile'>
+      <Link to='/profile/data'>
         <div className="hidden md:flex items-center gap-5 md:gap-2">
           <IoMdArrowDropdown />
           <p className="text-base">Muhammad Zidan</p>

@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
@@ -8,33 +7,25 @@ import Input from "./Input";
 import Label from "./Label";
 import data from "../../data/user.json";
 import BaseURL from "../../api/BaseURL";
+import Cookies from "js-cookie";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [msg, setMsg] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // axios.post('http://103.189.235.157:10007/user/login', {
-    //   email: email,
-    //   password: password
-    // })
-    // .then((resp) => {
-    //   console.log(resp)
-    // })
-    // .catch((err) => {
-    //   console.log(err)
-    // })
-
-    const res = await BaseURL.post("user/login", {
+    await BaseURL.post("user/login", {
       email: email,
       password: password,
-    });
-
-    if (res.status === 200) {
-      console.log(res);
-    }
+    })
+    .then((res) => {
+      const token= Cookies.get('access_token')
+      window.localStorage.setItem("token", token)
+    })
+    .catch((err) => setMsg(err.response.data.message))
   };
   return (
     <div className="basis-1/2 flex justify-center items-center">
@@ -42,6 +33,7 @@ const LoginForm = () => {
         onSubmit={handleSubmit}
         className="flex flex-col gap-6 sm:gap-10 mt-10 sm:mt-8 md:mt-5 w-10/12 md:w-11/12 lg:w-10/12 xl:gap-8 xl:w-7/12 2xl:gap-10 2xl:w-6/12 "
       >
+        <p className="h6 text-red-400 font-bold">{msg}</p>
         <h1 className="text-3xl md:text-4xl text-primary600 font-extrabold md:mb-5 2xl:mt-10">
           HELLO, WELCOME!
         </h1>
