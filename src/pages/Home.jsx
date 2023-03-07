@@ -13,7 +13,7 @@ import PrimaryButton from "../components/button/PrimaryButton";
 const Home = () => {
   return (
     <WebLayout>
-      <div className="mt-8 p-4 xl:p-10 flex flex-col xl:flex-row xl:items-center xl:justify-evenly xl:gap-28">
+      <div className="mt-8 p-4 xl:px-20 flex flex-col xl:flex-row xl:items-center xl:justify-evenly xl:gap-28">
         <div className="flex flex-col basis-7/12">
           <h1 className="text-primary500 font-bold h2 text-center xl:text-left">
             Temukan program penunjang karir Sesuai bidang keminatanmu
@@ -84,7 +84,7 @@ const Home = () => {
             Berbagai mentor yang berpengalaman dan memiliki keahlian beragam. Temukan mentormu dan asah skill sesuai dengan keminatanmu!
             </p>
             <div className="mx-auto xl:mx-0">
-            <Link className="mt-4" to='/mentor'>
+            <Link className="mt-4" to='/mentoring'>
                 <PrimaryButton>
                   <p className="text-sm md:text-xl">
                     Jelajahi

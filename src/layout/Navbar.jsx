@@ -51,24 +51,38 @@ const Navbar = () => {
             );
           })}
           <Link
-                  to='/profile'
-                  className="hover:font-bold transition-all duration-200"
-                  onClick={() => {
-                    setHidden(!hidden);
-                  }}
-                >
-                  <li className="h5 list-none">Profile</li>
-                </Link>
+            to="/profile"
+            className="hover:font-bold transition-all duration-200"
+            onClick={() => {
+              setHidden(!hidden);
+            }}
+          >
+            <li className="h5 list-none">Profile</li>
+          </Link>
         </div>
       </div>
-      <div className="hidden md:flex items-center gap-5 md:gap-2">
-        <IoMdArrowDropdown />
-        <p className="text-base">Muhammad Zidan</p>
-        <img src={avatar} className="md:w-2/12" />
-      </div>
+      <Link to='/profile'>
+        <div className="hidden md:flex items-center gap-5 md:gap-2">
+          <IoMdArrowDropdown />
+          <p className="text-base">Muhammad Zidan</p>
+          <img src={avatar} className="md:w-2/12" />
+        </div>
+      </Link>
       <div className="md:hidden">
         <button>
-          {hidden ? <GiHamburgerMenu onClick={() => {setHidden(!hidden)}} /> : <RxCross2 onClick={() => {setHidden(!hidden)}} />}
+          {hidden ? (
+            <GiHamburgerMenu
+              onClick={() => {
+                setHidden(!hidden);
+              }}
+            />
+          ) : (
+            <RxCross2
+              onClick={() => {
+                setHidden(!hidden);
+              }}
+            />
+          )}
         </button>
       </div>
     </div>

@@ -5,53 +5,80 @@ import { Link } from "react-router-dom";
 import OtherButton from "../button/OtherButton";
 import PrimaryButton from "../button/PrimaryButton";
 import Input from "./Input";
-import Label from './Label'
-import data from '../../data/user.json'
+import Label from "./Label";
+import data from "../../data/user.json";
+import BaseURL from "../../api/BaseURL";
 
 const LoginForm = () => {
-  const [email, setEmail]= useState('')
-  const [password, setPassword]= useState('')
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleSubmit= (e) => {
-    e.preventDefault()
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    // if(email === data.email && password === data.password) {
-    //   window.localStorage.setItem('token', data.token)
-    // }
-    axios.post('http://103.189.235.157:10007/user/login', {
+    // axios.post('http://103.189.235.157:10007/user/login', {
+    //   email: email,
+    //   password: password
+    // })
+    // .then((resp) => {
+    //   console.log(resp)
+    // })
+    // .catch((err) => {
+    //   console.log(err)
+    // })
+
+    const res = await BaseURL.post("user/login", {
       email: email,
-      password: password
-    })
-    .then((resp) => {
-      console.log(resp)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-  }
+      password: password,
+    });
+
+    if (res.status === 200) {
+      console.log(res);
+    }
+  };
   return (
     <div className="basis-1/2 flex justify-center items-center">
-      <form onSubmit={handleSubmit} className="flex flex-col gap-6 sm:gap-10 mt-10 sm:mt-8 md:mt-5 w-10/12 md:w-11/12 lg:w-10/12 xl:gap-8 xl:w-7/12 2xl:gap-10 2xl:w-6/12 ">
-        <h1 className="text-3xl md:text-4xl text-primary600 font-extrabold md:mb-5 2xl:mt-10">HELLO, WELCOME!</h1>
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-6 sm:gap-10 mt-10 sm:mt-8 md:mt-5 w-10/12 md:w-11/12 lg:w-10/12 xl:gap-8 xl:w-7/12 2xl:gap-10 2xl:w-6/12 "
+      >
+        <h1 className="text-3xl md:text-4xl text-primary600 font-extrabold md:mb-5 2xl:mt-10">
+          HELLO, WELCOME!
+        </h1>
 
         <div className="flex flex-col">
-          <Label id='uname' text='Username/Email' />
-          <Input type='text' id='uname' holder='Enter your Email' setEmail={setEmail} />
+          <Label id="uname" text="Username/Email" />
+          <Input
+            type="text"
+            id="uname"
+            holder="Enter your Email"
+            setEmail={setEmail}
+          />
         </div>
 
         <div className="flex flex-col">
-          <Label id='pwd' text='Password' />
-          <Input type='password' id='pwd' holder='Enter your Password' setPassword= {setPassword} />
-          <a href="" className="self-end mt-8 text-md md:text-xl xl:text-base font-bold text-primary500">Forget Password</a>
+          <Label id="pwd" text="Password" />
+          <Input
+            type="password"
+            id="pwd"
+            holder="Enter your Password"
+            setPassword={setPassword}
+          />
+          <a
+            href=""
+            className="self-end mt-8 text-md md:text-xl xl:text-base font-bold text-primary500"
+          >
+            Forget Password
+          </a>
         </div>
 
         <div className="flex flex-col">
-          <PrimaryButton type='submit'>
-            Log In
-          </PrimaryButton>
+          <PrimaryButton type="submit">Log In</PrimaryButton>
           <div className="flex justify-center items-center gap-3 my-5">
             <hr className="bg-gray-400 w-44 h-1 basis-1/3" />
-            <p className="font-bold text-xl xl:text-base text-neutral-500 ">Or</p>
+            <p className="font-bold text-xl xl:text-base text-neutral-500 ">
+              Or
+            </p>
             <hr className="bg-gray-400 w-44 h-1 basis-1/3" />
           </div>
           <OtherButton>
@@ -61,7 +88,10 @@ const LoginForm = () => {
         </div>
         <div className="flex justify-center">
           <p className="text-base md:text-xl xl:text-base font-medium text-primary500">
-            Don’t have an account? <Link to="/register" className="font-bold text-primary500">Create</Link>
+            Don’t have an account?{" "}
+            <Link to="/register" className="font-bold text-primary500">
+              Create
+            </Link>
           </p>
         </div>
       </form>

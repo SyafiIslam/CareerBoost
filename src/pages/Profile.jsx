@@ -1,9 +1,9 @@
 import React from "react";
-import WebLayout from "../layout/WebLayout";
-import avatar2 from "../assets/mentoring/avatar2.svg";
 import { Link, Outlet } from "react-router-dom";
+import WebLayout from "../layout/WebLayout";
+import avatar2 from '../assets/profile/avatar2.svg'
 
-const MentorInfo = () => {
+const Profile = () => {
   return (
     <WebLayout>
       <div className="flex flex-col xl:flex-row p-6 gap-8">
@@ -18,11 +18,14 @@ const MentorInfo = () => {
               <Link to="pengalaman" className="h6">
                 Pengalaman
               </Link>
+              <Link to="pengalaman" className="h6">
+                Langganan
+              </Link>
             </div>
           </div>
-          <Link to='/mentorCheckout'>
-            <button className="bg-primary400 text-white py-4 md:py-8 rounded-xl xl:w-full hover:shadow-lg hover:shadow-primary100 transition-all duration-300">
-              <p className="h5 font-bold">Jadikan Mentor</p>
+          <Link>
+            <button className="bg-red-500 text-white py-4 md:py-8 rounded-xl xl:w-full shadow-md hover:shadow-xl hover:shadow-red-800 transition-all duration-300">
+              <p className="h5 font-bold">Log out</p>
             </button>
           </Link>
         </div>
@@ -34,4 +37,4 @@ const MentorInfo = () => {
   );
 };
 
-export default MentorInfo;
+export default Profile;

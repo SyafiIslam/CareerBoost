@@ -3,8 +3,20 @@ import WebLayout from "../layout/WebLayout";
 import jumbo from "../assets/course/jumbo.svg";
 import icon from "../assets/course/search.svg";
 import Card from "../components/card/CourseCard";
+import Slider from "react-slick";
 
 const Course = () => {
+
+  const settings= {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+  }
+
   return (
     <WebLayout>
       <div className="mt-8 p-4 xl:px-16 flex flex-col xl:flex-row xl:items-center xl:justify-evenly xl:gap-28">
@@ -31,7 +43,7 @@ const Course = () => {
         <img src={icon} className="w-6 -mr-10 xl:-mr-16 scale-75 xl:scale-100 relative" alt="" />
       </div>
 
-      <div className="flex items-center justify-between mt-8 p-4 md:p-10">
+      <div className="flex items-center justify-between mt-8 p-4 xl:px-20 md:p-10">
         <h2 className="font-bold text-neutral-900 h3">Recommended</h2>
         <p className="text-primary500 h4">
           See All
@@ -42,7 +54,7 @@ const Course = () => {
         <Card />
       </div>
 
-      <div className="flex items-center justify-between mt-8 p-4 md:p-10">
+      <div className="flex items-center justify-between mt-8 p-4 xl:px-20 md:p-10">
         <h2 className="font-bold text-neutral-900 h3">Front End Developer</h2>
         <p className="text-primary500 text-lg md:text-xl xl:text-3xl">
           See All
@@ -52,6 +64,13 @@ const Course = () => {
       <div className="flex justify-center gap-10 flex-wrap mt-8 p-4">
         <Card />
       </div>
+      <Slider {...settings} >
+                {/* <MentorSwipe /> */}
+                <p>1</p>
+                <p>2</p>
+                <p>3</p>
+                <p>4</p>
+              </Slider>
     </WebLayout>
   );
 };

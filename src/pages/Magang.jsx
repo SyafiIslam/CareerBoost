@@ -11,7 +11,7 @@ import interest from '../data/Interest'
 const Magang = () => {
   return (
     <WebLayout>
-      <div className="flex flex-col p-6 md:p-10">
+      <div className="flex flex-col p-6 xl:px-20 md:p-10">
         <div className="flex flex-col gap-10 xl:gap-0 xl:flex-row items-center justify-between">
           <div className="flex flex-col basis-6/12">
             <h1 className="h3 font-bold text-primary600 mb-8">
