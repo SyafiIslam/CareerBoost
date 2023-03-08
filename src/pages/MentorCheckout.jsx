@@ -56,7 +56,7 @@ const MentorCheckout = () => {
           </div>
         </div>
         <div className="flex xl:hidden">
-          <Link className="mx-auto" to="/courseConfirm">
+          <Link className="mx-auto" to="/mentorConfirm">
             <PrimaryButton>
               <p className="h5">Checkout</p>
             </PrimaryButton>

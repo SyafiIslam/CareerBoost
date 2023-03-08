@@ -20,6 +20,8 @@ import Pengalaman from "../components/mentor/Pengalaman";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import UserData from "../components/profile/UserData";
+import Riwayat from "../components/profile/Riwayat";
+import Langganan from "../components/profile/Langganan";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -54,8 +56,9 @@ const MainRoute = () => {
         <Route path="/mentorCheckout" element={<MentorCheckout />} />
         <Route path="/mentorConfirm" element={<MentorConfirm />} />
         <Route path="/profile" element={<Profile />} >
-        <Route path="/profile/data" element={<UserData />} />
-          
+          <Route path="/profile/data" element={<UserData />} />
+          <Route path="/profile/pengalaman" element={<Riwayat />} />
+          <Route path="/profile/langganan" element={<Langganan />} />
         </Route>
       </Routes>
     </>

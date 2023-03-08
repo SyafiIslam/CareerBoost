@@ -7,18 +7,18 @@ const Profile = () => {
   return (
     <WebLayout>
       <div className="flex flex-col xl:flex-row p-6 gap-8">
-        <div className="flex flex-col basis-3/12 xl:sticky xl:top-10">
+        <div className="flex flex-col basis-3/12">
           <div className="flex flex-col gap-8 bg-neutral-50 py-6 xl:py-10 px-8 rounded-xl shadow-xl mb-4 xl:mb-8">
-            <img className=" md:w-3/12 w-6/12 mx-auto" src={avatar2} alt="" />
-            <div className="flex flex-col gap-4 justify-center items-center">
-              <h1 className="font-bold h5">Informasi Mentor</h1>
-              <Link to="data" className="h6">
+            <img className=" md:w-3/12 xl:w-5/12 mx-auto" src={avatar2} alt="" />
+            <div className="flex flex-col gap-4 justify-center items-start">
+              <h1 className="font-bold h5">Pengaturan Akun</h1>
+              <Link to="data" className="h6 hover:font-bold hover:text-primary400 transition-all duration-300">
                 Data Pribadi
               </Link>
-              <Link to="pengalaman" className="h6">
+              <Link to="pengalaman" className="h6 hover:font-bold hover:text-primary400 transition-all duration-300">
                 Pengalaman
               </Link>
-              <Link to="pengalaman" className="h6">
+              <Link to="langganan" className="h6 hover:font-bold hover:text-primary400 transition-all duration-300">
                 Langganan
               </Link>
             </div>

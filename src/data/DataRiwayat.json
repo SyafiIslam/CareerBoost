@@ -1,0 +1,48 @@
+{
+  "magang": [
+    {
+      "logo": "/src/assets/profile/spotify.svg",
+      "bidang": "Product Design",
+      "kantor": "Spotify Corporatiom"
+    },
+    {
+      "logo": "/src/assets/profile/google.svg",
+      "bidang": "Product Design",
+      "kantor": "Google. inc"
+    }
+  ],
+  "kursus": [
+    {
+      "logo": "/src/assets/profile/fe.svg",
+      "bidang": "Front End",
+      "desc": "Intro to Web Development"
+    },
+    {
+      "logo": "/src/assets/profile/fe.svg",
+      "bidang": "Front End",
+      "desc": "Building First Website"
+    },
+    {
+      "logo": "/src/assets/profile/ds.svg",
+      "bidang": "Data Science",
+      "desc": "Basic Data Analyst"
+    }
+  ],
+  "mentor": [
+    {
+      "logo": "/src/assets/profile/fe.svg",
+      "bidang": "Front End",
+      "mentor": "Mentor: Muhammad Messi"
+    },
+    {
+      "logo": "/src/assets/profile/fe.svg",
+      "bidang": "Front End",
+      "mentor": "Ahmad Ronaldo"
+    },
+    {
+      "logo": "/src/assets/profile/ds.svg",
+      "bidang": "Data Science",
+      "mentor": "Neymar Senior"
+    }
+  ]
+}

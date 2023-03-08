@@ -1,0 +1,28 @@
+{
+  "kursus": [
+    {
+      "thumbnail": "/src/assets/profile/thumbnail.svg",
+      "judul": "Intro to Website Development"
+    }
+  ],
+  "mentor": [
+    {
+      "avatar": "/src/assets/profile/avatar.svg",
+      "nama": "Muhammad Messi",
+      "kontak": [
+        {
+          "logo": "/src/assets/profile/whatsaap.svg",
+          "desc": "Hubungi via Whatsapp"
+        },
+        {
+          "logo": "/src/assets/profile/insta.svg",
+          "desc": "Hubungi via Instagram"
+        },
+        {
+          "logo": "/src/assets/profile/gmail.svg",
+          "desc": "Hubungi via Gmail"
+        }
+      ]
+    }
+  ]
+}
