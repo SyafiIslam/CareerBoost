@@ -10,7 +10,7 @@ const Riwayat = () => {
         </p>
         {history.magang.map((list) => {
           return (
-            <div className='flex gap-3 mt-6'>
+            <div className='flex gap-8 mt-6'>
               <img className='w-10 xl:w-16' src={list.logo} alt="" />
               <div className='flex flex-col'>
                 <p className='h6 font-semibold text-primary500'>
@@ -31,7 +31,7 @@ const Riwayat = () => {
         </p>
         {history.kursus.map((list) => {
           return (
-            <div className='flex gap-3 mt-6'>
+            <div className='flex gap-4 mt-6'>
               <img className='w-14 xl:w-20' src={list.logo} alt="" />
               <div className='flex flex-col'>
                 <p className='h6 font-semibold text-primary500'>
@@ -52,7 +52,7 @@ const Riwayat = () => {
         </p>
         {history.mentor.map((list) => {
           return (
-            <div className='flex gap-3 mt-6'>
+            <div className='flex gap-4 mt-6'>
               <img className='w-14 xl:w-20' src={list.logo} alt="" />
               <div className='flex flex-col'>
                 <p className='h6 font-semibold text-primary500'>

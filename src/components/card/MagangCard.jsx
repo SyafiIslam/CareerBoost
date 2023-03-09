@@ -11,7 +11,7 @@ const MagangCard = () => {
           <Link
             to="/magangDetail"
             key={index}
-            className="flex flex-col mx-auto xl:mx-0 bg-neutral-50 p-4 w-10/12 md:w-5/12 xl:w-3/12 rounded-3xl shadow-md gap-8"
+            className="flex flex-col xl:mx-0 bg-neutral-50 p-4 w-10/12 md:w-5/12 xl:w-4/12 2xl:w-3/12 rounded-3xl shadow-md gap-8"
           >
             <div className="flex items-center gap-3">
               <img src={data.logo} alt="" />

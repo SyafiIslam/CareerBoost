@@ -67,7 +67,7 @@ const Magang = () => {
                 </p>
               </div>
             </div>
-            <div className="flex flex-col md:flex-row  mx-auto justify-center flex-wrap gap-7 mt-10">
+            <div className="flex flex-col justify-center md:flex-row mx-auto flex-wrap gap-7 mt-10">
               <MagangCard />
             </div>
             <div className="flex w-full justify-between items-center my-16">
@@ -90,7 +90,7 @@ const Magang = () => {
               <HireCard />
             </div>
           </div>
-          <div className="bg-neutral-50 hidden xl:flex flex-col basis-1/4 items-start p-6 mx-auto rounded-3xl shadow-md gap-3 h-max sticky top-36">
+          <div className="bg-neutral-50 hidden xl:flex flex-col basis-1/4 items-start p-6 mx-auto rounded-3xl shadow-md gap-3 h-max w-max sticky top-36">
             <h1 className="h5 font-bold mb-6">
               Category
             </h1>
