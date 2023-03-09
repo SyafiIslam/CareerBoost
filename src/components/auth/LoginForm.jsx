@@ -22,6 +22,7 @@ const LoginForm = () => {
       password: password,
     })
     .then((res) => {
+      console.log(res);
       const token= Cookies.get('access_token')
       window.localStorage.setItem("token", token)
     })
