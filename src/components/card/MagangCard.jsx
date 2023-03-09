@@ -11,7 +11,7 @@ const MagangCard = () => {
           <Link
             to="/magangDetail"
             key={index}
-            className="flex flex-col xl:mx-0 bg-neutral-50 p-4 w-10/12 md:w-5/12 xl:w-4/12 2xl:w-3/12 rounded-3xl shadow-md gap-8"
+            className="flex flex-col xl:mx-0 bg-neutral-50 py-4 px-6 w-10/12 md:w-70 xl:w-72 2xl:w-80 rounded-3xl shadow-md gap-8"
           >
             <div className="flex items-center gap-3">
               <img src={data.logo} alt="" />
@@ -34,7 +34,7 @@ const MagangCard = () => {
                 );
               })}
             </div>
-            <div className="flex items-center gap-3 mt-auto">
+            <div className="flex items-center gap-2 mt-auto">
               <div className="h-4 w-4 bg-primary400 rounded-full" />
               <p className="p2 text-neutral-500">{data.postedAt}</p>
               <p className="p2 text-neutral-500 transfr rotate-90">|</p>

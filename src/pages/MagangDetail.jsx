@@ -2,7 +2,8 @@ import React from "react";
 import WebLayout from "../layout/WebLayout";
 import data from "../data/magangDetail.json";
 import loc from "../assets/magang/location.svg";
-import PrimaryButton from '../components/button/PrimaryButton'
+import PrimaryButton from "../components/button/PrimaryButton";
+import Swal from "sweetalert2";
 
 const MagangDetail = () => {
   return (
@@ -101,11 +102,19 @@ const MagangDetail = () => {
             </div>
           </div>
           <div className="mt-8 xl:mt-auto">
-          <PrimaryButton>
-            <p className="h6 font-bold">
-              Lamar Magang
-            </p>
-          </PrimaryButton>
+            <PrimaryButton
+              handleClick={() => {
+                Swal.fire({
+                  position: "center",
+                  icon: "success",
+                  title: "Permintaan Magang Sedang di Proses",
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+              }}
+            >
+              <p className="h6 font-bold">Lamar Magang</p>
+            </PrimaryButton>
           </div>
         </div>
       </div>

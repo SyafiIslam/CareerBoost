@@ -50,7 +50,7 @@ const Magang = () => {
             })}
           </div>
         <div className="flex flex-row-reverse gap-10">
-          <div className="flex flex-col w-full xl:basis-3/4 mt-16">
+          <div className="flex flex-col w-full mt-16">
             <div className="flex w-full justify-between items-center">
               <h1 className=" h4 font-bold">Recommended</h1>
               <div className="flex gap-4 md:gap-6 items-center">
@@ -67,7 +67,7 @@ const Magang = () => {
                 </p>
               </div>
             </div>
-            <div className="flex flex-col justify-center md:flex-row mx-auto flex-wrap gap-7 mt-10">
+            <div className="flex flex-col justify-evenly items-center md:flex-row mx-auto flex-wrap gap-7 mt-10">
               <MagangCard />
             </div>
             <div className="flex w-full justify-between items-center my-16">
@@ -86,7 +86,7 @@ const Magang = () => {
                 </p>
               </div>
             </div>
-            <div className="flex justify-center flex-col gap-8">
+            <div className="flex justify-center items-center flex-col gap-8">
               <HireCard />
             </div>
           </div>
