@@ -8,9 +8,9 @@ const Langganan = () => {
         Kursus Online
       </p>
 
-      {data.kursus.map((data) => {
+      {data.kursus.map((data, index) => {
         return (
-          <div className='flex flex-col xl:flex-row items-center gap-3 bg-neutral-100 border-2 border-neutral-200 rounded-xl p-6'>
+          <div key={index} className='flex flex-col xl:flex-row items-center gap-3 bg-neutral-100 border-2 border-neutral-200 rounded-xl p-6'>
             <img className='w-30 xl:w-40' src={data.thumbnail} alt="" />
             <p className='h5 font-bold'>
               {data.judul}
@@ -23,9 +23,9 @@ const Langganan = () => {
         Program Mentoring
       </p>
 
-      {data.mentor.map((data) => {
+      {data.mentor.map((data, index) => {
         return (
-          <div className='flex flex-col gap-16 bg-neutral-100 border-2 border-neutral-200 rounded-xl p-6'>
+          <div key={index} className='flex flex-col gap-16 bg-neutral-100 border-2 border-neutral-200 rounded-xl p-6'>
             <div className='flex flex-col xl:flex-row items-center gap-6'>
               <img className='w-16' src={data.avatar} alt="" />
               <p className='h5 font-bold'>
@@ -33,9 +33,9 @@ const Langganan = () => {
               </p>
             </div>
             <div className='flex flex-col xl:flex-row gap-8'>
-            {data.kontak.map((kontak) => {
+            {data.kontak.map((kontak, index) => {
               return (
-                <div className='flex items-center gap-2'>
+                <div key={index} className='flex items-center gap-2'>
                   <img src={kontak.logo} alt="" />
                   <p className='p1 font-medium text-primary400'>
                     {kontak.desc}

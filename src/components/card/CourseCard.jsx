@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import course from "../../data/Courses.json";
+import { Courses } from "../../data/Courses.js";
 
 const Card = () => {
   return (
     <>
-      {course.map((data, index) => {
+      {Courses.map((data, index) => {
         return (
           <Link to='/courseDetail' key={index} className="flex flex-col justify-center bg-neutral-50 p-4 w-10/12 md:w-70 xl:w-72 2xl:w-80 rounded-3xl shadow-lg">
             <div className="flex justify-center">

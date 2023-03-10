@@ -48,7 +48,7 @@ const Riwayat = () => {
 
       <div className='flex flex-col'>
         <p className='h5 font-bold mt-9'>
-          Riwayat Program Magang
+          Riwayat Mentoring
         </p>
         {history.mentor.map((list) => {
           return (

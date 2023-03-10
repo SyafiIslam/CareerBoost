@@ -5,7 +5,7 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 import navList from "../data/Navlist.json";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useMatch } from "react-router-dom";
 
 const Navbar = () => {
   const [hidden, setHidden] = useState("true");
@@ -22,7 +22,7 @@ const Navbar = () => {
               <Link
                 key={index}
                 to={list.path}
-                className={`${loc.pathname === '/profile/data' && "text-primary400 font-bold"} hover:font-bold transition-all duration-200 active:`}
+                className={`${loc.pathname === list.path && "text-primary400 font-bold"} hover:font-bold transition-all duration-200`}
               >
                 <li>{list.name}</li>
               </Link>
@@ -41,7 +41,7 @@ const Navbar = () => {
               <ul key={index}>
                 <Link
                   to={list.path}
-                  className={`${loc.pathname === list.path && "text-primary400 font-bold"} hover:font-bold transition-all duration-200 active:`}
+                  className={`${loc.pathname === list.path && "text-primary400 font-bold"} hover:font-bold transition-all duration-200`}
                   onClick={() => {
                     setHidden(!hidden);
                   }}
@@ -58,12 +58,12 @@ const Navbar = () => {
               setHidden(!hidden);
             }}
           >
-            <li className={`${loc.pathname === '/profile' && 'text-primary400'} h5 list-none`}>Profile</li>
+            <li className={`${loc.pathname.includes('profile') && 'text-primary400'} h5 list-none`}>Profile</li>
           </Link>
         </div>
       </div>
       <Link to='/profile/data'>
-        <div className="hidden md:flex items-center gap-5 md:gap-2 hover:font-bold hover:text-primary400 transition-all duration-300">
+        <div className={`${loc.pathname.includes('profile') && 'text-primary400'} hidden md:flex items-center gap-5 md:gap-2 hover:font-bold hover:text-primary400 transition-all duration-300`}>
           <IoMdArrowDropdown className="" />
           <p className="text-base ">Muhammad Zidan</p>
           <img src={avatar} className="md:w-2/12" />

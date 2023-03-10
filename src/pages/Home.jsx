@@ -34,7 +34,7 @@ const Home = () => {
         <div className=" py-7 mt-8 bg-primary400 flex flex-col items-center justify-center md:flex-row gap-8 text-white xl:px-10">
           <div className="flex flex-col justify-center items-center gap-5">
             <div className="flex flex-col justify-center items-center">
-              <img className="w-2/5" src={logoMentor} />
+              <img className="" src={logoMentor} />
               <h3 className="font-bold h4  mt-4">
                 Program Mentoring
               </h3>
@@ -45,7 +45,7 @@ const Home = () => {
           </div>
           <div className="flex flex-col justify-center items-center gap-5">
             <div className="flex flex-col justify-center items-center">
-              <img className="w-3/5" src={logoCourse} />
+              <img className="" src={logoCourse} />
               <h3 className="font-bold h4 mt-4">
                 Online Course
               </h3>
@@ -56,7 +56,7 @@ const Home = () => {
           </div>
           <div className="flex flex-col justify-center items-center gap-5">
             <div className="flex flex-col justify-center items-center">
-              <img className="w-3/5 xl:w-2/5" src={logoMagang} />
+              <img className="" src={logoMagang} />
               <h3 className="font-bold h4 mt-4">
                 Program Magang
               </h3>
