@@ -67,7 +67,7 @@ const Magang = () => {
                 </p>
               </div>
             </div>
-            <div className="flex flex-col justify-evenly items-center md:flex-row mx-auto flex-wrap gap-7 mt-10">
+            <div className="flex flex-col justify-evenly items-stretch md:flex-row mx-auto flex-wrap gap-7 mt-10">
               <MagangCard />
             </div>
             <div className="flex w-full justify-between items-center my-16">

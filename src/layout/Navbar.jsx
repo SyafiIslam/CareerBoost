@@ -5,10 +5,12 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 import navList from "../data/Navlist.json";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [hidden, setHidden] = useState("true");
+  let loc= useLocation()
+  console.log(loc);
 
   return (
     <div className="flex py-4 px-4 text-lg z-50 font-medium justify-between items-center shadow-md sticky top-0 bg-white ">
@@ -21,7 +23,7 @@ const Navbar = () => {
               <Link
                 key={index}
                 to={list.path}
-                className="hover:font-bold transition-all duration-200"
+                className={`${loc.pathname === list.path && "text-primary400"} hover:font-bold transition-all duration-200 active:`}
               >
                 <li>{list.name}</li>
               </Link>
@@ -62,9 +64,9 @@ const Navbar = () => {
         </div>
       </div>
       <Link to='/profile/data'>
-        <div className="hidden md:flex items-center gap-5 md:gap-2">
-          <IoMdArrowDropdown />
-          <p className="text-base">Muhammad Zidan</p>
+        <div className="hidden md:flex items-center gap-5 md:gap-2 hover:font-bold hover:text-primary400 transition-all duration-300">
+          <IoMdArrowDropdown className="" />
+          <p className="text-base ">Muhammad Zidan</p>
           <img src={avatar} className="md:w-2/12" />
         </div>
       </Link>

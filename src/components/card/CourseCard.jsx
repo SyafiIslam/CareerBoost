@@ -7,7 +7,7 @@ const Card = () => {
     <>
       {course.map((data, index) => {
         return (
-          <Link to='/courseDetail' key={index} className="flex flex-col justify-center bg-neutral-50 p-4 w-10/12 md:w-5/12 xl:w-3/12 2xl:w-2/12 rounded-3xl shadow-lg">
+          <Link to='/courseDetail' key={index} className="flex flex-col justify-center bg-neutral-50 p-4 w-10/12 md:w-70 xl:w-72 2xl:w-80 rounded-3xl shadow-lg">
             <div className="flex justify-center">
               <img className="w-44 xl:w-64" src={data.img} />
             </div>

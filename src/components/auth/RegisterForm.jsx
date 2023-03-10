@@ -9,17 +9,29 @@ import BaseURL from "../../api/BaseURL";
 
 const RegisterForm = () => {
   const [auth, setAuth] = useState({
-    fullname: "",
+    full_name: "",
     username: "",
     email: "",
     password: "",
     interestID: [],
   });
 
+  const [interest, setInterest] = useState([])
+
+  const inputInterest= () => {
+    auth.interestID= []
+    interest.map((item) => {
+      auth.interestID.push(parseInt(item.value))
+    })
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    inputInterest()
+    console.log(auth);
+    console.log(interest);
     await BaseURL.post("user/register", {
-      fullname: auth.fullname,
+      full_name: auth.fullname,
       username: auth.username,
       email: auth.email,
       password: auth.password,
@@ -28,7 +40,7 @@ const RegisterForm = () => {
     .then((res) => {
       console.log(res);
     }).catch((err) => {
-      
+      console.log(err);
     });
   };
 
@@ -49,7 +61,7 @@ const RegisterForm = () => {
             id="name"
             holder="Enter your name"
             handleChange={(e) => {
-              setAuth({ ...auth, fullname: e.target.value });
+              setAuth({ ...auth, full_name: e.target.value });
             }}
           />
         </div>
@@ -106,7 +118,7 @@ const RegisterForm = () => {
             isMulti
             options={Interest}
             onChange={(item) => {
-              setAuth({ ...auth, interestID: item });
+              setInterest(item)
             }}
           />
         </div>

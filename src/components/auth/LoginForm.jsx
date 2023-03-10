@@ -5,9 +5,7 @@ import OtherButton from "../button/OtherButton";
 import PrimaryButton from "../button/PrimaryButton";
 import Input from "./Input";
 import Label from "./Label";
-import data from "../../data/user.json";
 import BaseURL from "../../api/BaseURL";
-import Cookies from "js-cookie";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -16,17 +14,16 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     await BaseURL.post("user/login", {
       email: email,
       password: password,
     })
-    .then((res) => {
-      console.log(res);
-      const token= Cookies.get('access_token')
-      window.localStorage.setItem("token", token)
-    })
-    .catch((err) => setMsg(err.response.data.message))
+      .then((res) => {
+        window.localStorage.setItem('token', res.data.data.token)
+      })
+      .catch((err) => {
+        setMsg(err.response.data.message)
+      });
   };
   return (
     <div className="basis-1/2 flex justify-center items-center">
@@ -45,7 +42,9 @@ const LoginForm = () => {
             type="text"
             id="uname"
             holder="Enter your Email"
-            setEmail={setEmail}
+            handleChange={(e) => {
+              setEmail(e.target.value);
+            }}
           />
         </div>
 
@@ -55,7 +54,9 @@ const LoginForm = () => {
             type="password"
             id="pwd"
             holder="Enter your Password"
-            setPassword={setPassword}
+            handleChange={(e) => {
+              setPassword(e.target.value);
+            }}
           />
           <a
             href=""

@@ -50,7 +50,7 @@ const Course = () => {
         </p>
       </div>
 
-      <div className="flex justify-center gap-10 flex-wrap mt-8">
+      <div className="flex justify-evenly gap-10 flex-wrap mt-8">
         <Card />
       </div>
 
