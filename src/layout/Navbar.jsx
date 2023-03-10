@@ -10,7 +10,6 @@ import { Link, useLocation } from "react-router-dom";
 const Navbar = () => {
   const [hidden, setHidden] = useState("true");
   let loc= useLocation()
-  console.log(loc);
 
   return (
     <div className="flex py-4 px-4 text-lg z-50 font-medium justify-between items-center shadow-md sticky top-0 bg-white ">
@@ -23,7 +22,7 @@ const Navbar = () => {
               <Link
                 key={index}
                 to={list.path}
-                className={`${loc.pathname === list.path && "text-primary400"} hover:font-bold transition-all duration-200 active:`}
+                className={`${loc.pathname === '/profile/data' && "text-primary400 font-bold"} hover:font-bold transition-all duration-200 active:`}
               >
                 <li>{list.name}</li>
               </Link>
@@ -42,7 +41,7 @@ const Navbar = () => {
               <ul key={index}>
                 <Link
                   to={list.path}
-                  className="hover:font-bold transition-all duration-200"
+                  className={`${loc.pathname === list.path && "text-primary400 font-bold"} hover:font-bold transition-all duration-200 active:`}
                   onClick={() => {
                     setHidden(!hidden);
                   }}
@@ -59,7 +58,7 @@ const Navbar = () => {
               setHidden(!hidden);
             }}
           >
-            <li className="h5 list-none">Profile</li>
+            <li className={`${loc.pathname === '/profile' && 'text-primary400'} h5 list-none`}>Profile</li>
           </Link>
         </div>
       </div>

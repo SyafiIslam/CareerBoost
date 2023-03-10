@@ -25,10 +25,10 @@ const Mentor = () => {
       <div className="flex flex-col p-4 xl:p-6 xl:px-20 md:p-10 ">
         <div className="flex flex-col gap-10 xl:gap-0 xl:flex-row items-center justify-between ">
           <div className="flex flex-col basis-6/12">
-            <h1 className="h3 font-bold text-primary600 mb-8">
+            <h1 className="h3 font-bold text-center xl:text-left text-primary600 mb-8">
               Program Mentoring bersama Mentor Berpengalaman di Bidangnya
             </h1>
-            <p className="h6 text-neutral-600">
+            <p className="h6 text-neutral-600 text-center">
               Temukan mentor yang dapat membantumu dalam mempelajari front end,
               back end, data science, AI, atau cyber security.
             </p>

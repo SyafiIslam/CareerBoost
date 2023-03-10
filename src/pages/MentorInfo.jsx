@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import WebLayout from "../layout/WebLayout";
 import avatar2 from "../assets/mentoring/avatar2.svg";
 import { Link, Outlet } from "react-router-dom";
 
 const MentorInfo = () => {
+  const [clicked, setClicked] = useState("data");
   return (
     <WebLayout>
       <div className="flex flex-col xl:flex-row p-6 gap-8">
@@ -12,15 +13,27 @@ const MentorInfo = () => {
             <img className=" md:w-3/12 w-6/12 mx-auto" src={avatar2} alt="" />
             <div className="flex flex-col gap-4 justify-center items-center">
               <h1 className="font-bold h5">Informasi Mentor</h1>
-              <Link to="data" className="h6">
+              <Link
+                onClick={() => setClicked('data')}
+                to="data"
+                className={`${
+                  clicked === "data" && "text-primary400 font-bold"
+                }  h6 transition-all duration-300`}
+              >
                 Data Pribadi
               </Link>
-              <Link to="pengalaman" className="h6">
+              <Link
+              onClick={() => setClicked('pengalaman')}
+                to="pengalaman"
+                className={`${
+                  clicked === "pengalaman" && "text-primary400 font-bold"
+                }  h6 transition-all duration-300`}
+              >
                 Pengalaman
               </Link>
             </div>
           </div>
-          <Link to='/mentorCheckout'>
+          <Link to="/mentorCheckout">
             <button className="bg-primary400 text-white py-4 md:py-8 rounded-xl w-full hover:shadow-lg hover:shadow-primary100 transition-all duration-300">
               <p className="h5 font-bold">Jadikan Mentor</p>
             </button>

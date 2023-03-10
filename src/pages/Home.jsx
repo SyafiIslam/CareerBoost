@@ -18,7 +18,7 @@ const Home = () => {
           <h1 className="text-primary500 font-bold h2 text-center xl:text-left">
             Temukan program penunjang karir Sesuai bidang keminatanmu
           </h1>
-          <p className="text-primary500 font-medium h5 text-justify xl:text-left mt-8">
+          <p className="text-primary500 font-medium h5 text-center xl:text-left mt-8">
             Kamu dapat belajar langsung dengan para mentor yang berkompeten,
             menambah portofolio, dan temukan program magang yang sesuai dengan
             bidangmu!
