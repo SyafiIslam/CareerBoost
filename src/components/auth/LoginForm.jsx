@@ -21,7 +21,7 @@ const LoginForm = () => {
       .then((res) => {
         console.log(res);
         window.localStorage.setItem('token', res.data.data.token)
-        // window.location.reload()
+        window.location.reload()
       })
       .catch((err) => {
         setMsg(err.response.data.message)
