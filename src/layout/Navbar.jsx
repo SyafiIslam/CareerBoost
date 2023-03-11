@@ -22,7 +22,7 @@ const Navbar = () => {
               <Link
                 key={index}
                 to={list.path}
-                className={`${loc.pathname === list.path && "text-primary400 font-bold"} hover:font-bold transition-all duration-200`}
+                className={`${loc.pathname.includes((list.name).toLowerCase()) && "text-primary400 font-bold"} hover:font-bold transition-all duration-200`}
               >
                 <li>{list.name}</li>
               </Link>
