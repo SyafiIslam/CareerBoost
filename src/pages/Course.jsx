@@ -3,19 +3,8 @@ import WebLayout from "../layout/WebLayout";
 import jumbo from "../assets/course/jumbo.svg";
 import icon from "../assets/course/search.svg";
 import Card from "../components/card/CourseCard";
-import Slider from "react-slick";
 
 const Course = () => {
-
-  const settings= {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-  }
 
   return (
     <WebLayout>
@@ -50,7 +39,7 @@ const Course = () => {
         </p>
       </div>
 
-      <div className="flex justify-evenly gap-10 flex-wrap mt-8">
+      <div className="flex justify-center gap-10 flex-wrap mt-8 p-4">
         <Card />
       </div>
 
