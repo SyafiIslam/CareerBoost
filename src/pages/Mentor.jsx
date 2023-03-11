@@ -31,7 +31,7 @@ const Mentor = () => {
             <h1 className="h3 font-bold text-center xl:text-left text-primary600 mb-8">
               Program Mentoring bersama Mentor Berpengalaman di Bidangnya
             </h1>
-            <p className="h6 text-neutral-600 text-center">
+            <p className="h6 text-neutral-600 text-center xl:text-left">
               Temukan mentor yang dapat membantumu dalam mempelajari front end,
               back end, data science, AI, atau cyber security.
             </p>

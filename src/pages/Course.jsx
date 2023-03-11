@@ -64,13 +64,7 @@ const Course = () => {
       <div className="flex justify-center gap-10 flex-wrap mt-8 p-4">
         <Card />
       </div>
-      <Slider {...settings} >
-                {/* <MentorSwipe /> */}
-                <p>1</p>
-                <p>2</p>
-                <p>3</p>
-                <p>4</p>
-              </Slider>
+      
     </WebLayout>
   );
 };

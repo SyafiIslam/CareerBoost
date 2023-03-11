@@ -32,7 +32,7 @@ const MentorAll = () => {
             </div>
             <p className="p2 md:h6 font-medium mb-4">{data.rate}</p>
             <div className="w-80 xl:w-full">
-              <p className="h6 text-neutral-600 mb-6 text-justify xl:text-left ">{data.desc}</p>
+              <p className="h6 text-neutral-600 mb-6 text-left">{data.desc}</p>
             </div>
             <p className="h6 text-neutral-600">Pengalaman</p>
             <div className="flex gap-8 mb-4">

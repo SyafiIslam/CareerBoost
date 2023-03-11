@@ -5,6 +5,10 @@ import avatar2 from "../assets/profile/avatar2.svg";
 
 const Profile = () => {
   const [click, setClick] = useState("data");
+
+  const handleLogout= () => {
+    window,localStorage.removeItem('token')
+  }
   return (
     <WebLayout>
       <div className="flex flex-col xl:flex-row p-6 gap-8">
@@ -51,7 +55,7 @@ const Profile = () => {
             </div>
           </div>
           <Link>
-            <button className="bg-red-500 text-white py-4 md:py-8 rounded-xl w-full shadow-md shadow-red-800 hover:shadow-lg hover:shadow-red-800 transition-all duration-300">
+            <button onClick={() => handleLogout()} className="bg-red-500 text-white py-4 md:py-8 rounded-xl w-full shadow-md shadow-red-800 hover:shadow-lg hover:shadow-red-800 transition-all duration-300">
               <p className="h5 font-bold">Log out</p>
             </button>
           </Link>

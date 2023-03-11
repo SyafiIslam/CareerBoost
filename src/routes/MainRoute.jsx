@@ -17,11 +17,13 @@ import MentorConfirm from "../pages/MentorConfirm";
 import Register from "../pages/Register";
 import DataPribadi from "../components/mentor/DataPribadi";
 import Pengalaman from "../components/mentor/Pengalaman";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import UserData from "../components/profile/UserData";
 import Riwayat from "../components/profile/Riwayat";
 import Langganan from "../components/profile/Langganan";
+import ProtectedRoute from "./ProtectedRoute";
+import AuthRoute from "./AuthRoute";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -38,27 +40,31 @@ const MainRoute = () => {
     <>
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/course" element={<Course />} />
-        <Route path="/courseDetail" element={<CourseDetail />} />
-        <Route path="/courseCheckout" element={<CourseCheckout />} />
-        <Route path="/courseConfirm" element={<CourseConfirm />} />
-        <Route path="/lesson" element={<Lesson />} />
-        <Route path="/magang" element={<Magang />} />
-        <Route path="/magangDetail" element={<MagangDetail />} />
-        <Route path="/mentoring" element={<Mentor />} />
-        <Route path="/mentorInfo" element={<MentorInfo />}>
-          <Route path="/mentorInfo/data" element={<DataPribadi />} />
-          <Route path="/mentorInfo/pengalaman" element={<Pengalaman />} />
+        <Route element={<AuthRoute />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Route>
-        <Route path="/mentorCheckout" element={<MentorCheckout />} />
-        <Route path="/mentorConfirm" element={<MentorConfirm />} />
-        <Route path="/profile" element={<Profile />} >
-          <Route path="/profile/data" element={<UserData />} />
-          <Route path="/profile/pengalaman" element={<Riwayat />} />
-          <Route path="/profile/langganan" element={<Langganan />} />
+        <Route element={<ProtectedRoute />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/course" element={<Course />} />
+          <Route path="/courseDetail" element={<CourseDetail />} />
+          <Route path="/courseCheckout" element={<CourseCheckout />} />
+          <Route path="/courseConfirm" element={<CourseConfirm />} />
+          <Route path="/lesson" element={<Lesson />} />
+          <Route path="/magang" element={<Magang />} />
+          <Route path="/magangDetail" element={<MagangDetail />} />
+          <Route path="/mentoring" element={<Mentor />} />
+          <Route path="/mentorInfo" element={<MentorInfo />}>
+            <Route path="/mentorInfo/data" element={<DataPribadi />} />
+            <Route path="/mentorInfo/pengalaman" element={<Pengalaman />} />
+          </Route>
+          <Route path="/mentorCheckout" element={<MentorCheckout />} />
+          <Route path="/mentorConfirm" element={<MentorConfirm />} />
+          <Route path="/profile" element={<Profile />}>
+            <Route path="/profile/data" element={<UserData />} />
+            <Route path="/profile/pengalaman" element={<Riwayat />} />
+            <Route path="/profile/langganan" element={<Langganan />} />
+          </Route>
         </Route>
       </Routes>
     </>
