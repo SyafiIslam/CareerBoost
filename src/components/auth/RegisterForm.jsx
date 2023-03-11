@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Select from "react-select";
 import PrimaryButton from "../button/PrimaryButton";
 import Interest from "../../data/Interest";
@@ -39,10 +39,12 @@ const RegisterForm = () => {
     })
     .then((res) => {
       console.log(res);
+      <Navigate to= '/login' />
     }).catch((err) => {
       console.log(err);
     });
   };
+
 
   return (
     <div className="basis-1/2 flex justify-center items-center">

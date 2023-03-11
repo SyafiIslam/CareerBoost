@@ -19,7 +19,9 @@ const LoginForm = () => {
       password: password,
     })
       .then((res) => {
+        console.log(res);
         window.localStorage.setItem('token', res.data.data.token)
+        // window.location.reload()
       })
       .catch((err) => {
         setMsg(err.response.data.message)
@@ -39,6 +41,7 @@ const LoginForm = () => {
         <div className="flex flex-col">
           <Label id="uname" text="Username/Email" />
           <Input
+            
             type="text"
             id="uname"
             holder="Enter your Email"

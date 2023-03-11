@@ -63,7 +63,7 @@ const Navbar = () => {
         </div>
       </div>
       <Link to='/profile/data'>
-        <div className={`${loc.pathname.includes('profile') && 'text-primary400'} hidden md:flex items-center gap-5 md:gap-2 hover:font-bold hover:text-primary400 transition-all duration-300`}>
+        <div className={`${loc.pathname.includes('profile') && 'text-primary400 font-bold'} hidden md:flex items-center gap-5 md:gap-2 hover:font-bold hover:text-primary400 transition-all duration-300`}>
           <IoMdArrowDropdown className="" />
           <p className="text-base ">Muhammad Zidan</p>
           <img src={avatar} className="md:w-2/12" />

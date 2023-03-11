@@ -8,6 +8,7 @@ const Profile = () => {
 
   const handleLogout= () => {
     window,localStorage.removeItem('token')
+    window.location.reload()
   }
   return (
     <WebLayout>

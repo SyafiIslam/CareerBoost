@@ -1,8 +1,14 @@
 import React from "react";
 
-const Input = ({ type = "text", id, holder, handleChange }) => {
+const Input = ({
+  type = "text",
+  id,
+  holder,
+  handleChange,
+}) => {
   return (
     <input
+      required
       type={type}
       id={id}
       placeholder={holder}
