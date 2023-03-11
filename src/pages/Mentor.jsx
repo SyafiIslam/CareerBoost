@@ -69,11 +69,11 @@ const Mentor = () => {
           })}
         </div>
         <div className="flex flex-row-reverse w-fit gap-10">
-          <div className="flex flex-col xl:basis-1/4 mt-16 bg-red-300">
+          <div className="flex flex-col xl:basis-1/4 mt-16">
             <div className="flex w-full justify-between items-center">
               <h1 className=" h4 font-bold">Recommended</h1>
             </div>
-            <div className=" mx-auto mt-10 w-3/4 p-6 bg-green-300">
+            <div className=" mx-auto mt-10 w-screen p-6 ">
               <Slider {...settings} >
                 {/* <p>1</p>
                 <p>2</p>
