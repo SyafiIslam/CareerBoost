@@ -54,9 +54,9 @@ const MainRoute = () => {
           <Route path="/magang" element={<Magang />} />
           <Route path="/magangDetail" element={<MagangDetail />} />
           <Route path="/mentoring" element={<Mentor />} />
-          <Route path="/mentorInfo" element={<MentorInfo />}>
-            <Route path="/mentorInfo/data" element={<DataPribadi />} />
-            <Route path="/mentorInfo/pengalaman" element={<Pengalaman />} />
+          <Route path="/mentoringInfo" element={<MentorInfo />}>
+            <Route path="/mentoringInfo/data" element={<DataPribadi />} />
+            <Route path="/mentoringInfo/pengalaman" element={<Pengalaman />} />
           </Route>
           <Route path="/mentorCheckout" element={<MentorCheckout />} />
           <Route path="/mentorConfirm" element={<MentorConfirm />} />

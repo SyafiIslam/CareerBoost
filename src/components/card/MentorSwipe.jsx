@@ -14,7 +14,7 @@ const MentorSwipe = ({
 }) => {
   return (
     <Link
-      to="/mentorInfo/data"
+      to="/mentoringInfo/data"
       className="flex flex-col mx-auto bg-neutral-50 w p-4 rounded-3xl shadow-md gap-4"
     >
       <div className="flex flex-col xl:flex-row items-start justify-start gap-3 x w-fulll:gap-1">

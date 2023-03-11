@@ -10,7 +10,7 @@ const MentorAll = () => {
       {mentor.map((data, index) => {
         return (
           <Link
-            to="/mentorInfo/data"
+            to="/mentoringInfo/data"
             key={index}
             className="flex flex-col mx-auto xl:mx-0 bg-neutral-50 w-max p-4 rounded-3xl shadow-md gap-4"
           >
