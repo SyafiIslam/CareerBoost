@@ -36,7 +36,7 @@ const MentorConfirm = () => {
             </div>
           </div>
           <div>
-            <Link to="/beranda">
+            <Link to="/">
               <p className="w-4/12 mx-auto h4 font-bold bg-primary400 text-white p-2 xl:p-6 rounded-full text-center">
                 Kembali
               </p>

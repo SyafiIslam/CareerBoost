@@ -38,7 +38,7 @@ const UserData = () => {
           <Edit value="24/03/2003" />
         </div>
         <div className="flex flex-col basis-1/2 gap-6">
-          <p className="font-bold h5">Interesr</p>
+          <p className="font-bold h5">Interest</p>
           <Edit value="Front End, Back End, Data Science, Cyber Security" />
         </div>
       </div>

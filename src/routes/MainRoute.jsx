@@ -24,6 +24,7 @@ import Riwayat from "../components/profile/Riwayat";
 import Langganan from "../components/profile/Langganan";
 import ProtectedRoute from "./ProtectedRoute";
 import AuthRoute from "./AuthRoute";
+import Mentor2 from "../pages/Mentor2";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -45,7 +46,7 @@ const MainRoute = () => {
           <Route path="/register" element={<Register />} />
         </Route>
         <Route element={<ProtectedRoute />}>
-          <Route path="/beranda" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/course" element={<Course />} />
           <Route path="/courseDetail" element={<CourseDetail />} />
           <Route path="/courseCheckout" element={<CourseCheckout />} />
@@ -53,7 +54,7 @@ const MainRoute = () => {
           <Route path="/lesson" element={<Lesson />} />
           <Route path="/magang" element={<Magang />} />
           <Route path="/magangDetail" element={<MagangDetail />} />
-          <Route path="/mentoring" element={<Mentor />} />
+          <Route path="/mentoring" element={<Mentor2 />} />
           <Route path="/mentoringInfo" element={<MentorInfo />}>
             <Route path="/mentoringInfo/data" element={<DataPribadi />} />
             <Route path="/mentoringInfo/pengalaman" element={<Pengalaman />} />

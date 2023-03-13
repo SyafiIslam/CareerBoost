@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import mentor from "../../data/mentoring.json";
 import { HiDotsHorizontal } from "react-icons/hi";
 import loc from "../../assets/magang/location.svg";
+import BaseURL from "../../api/BaseURL";
 
 const MentorAll = () => {
+
+  useEffect(() =>{
+    BaseURL.get("api/mentorinfo?limit=3&page=2")
+    .then((res) => {
+      console.log(res);
+    }).catch((err) => {
+      console.log(err);
+    });
+  },[])
   return (
     <>
       {mentor.map((data, index) => {

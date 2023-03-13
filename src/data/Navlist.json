@@ -1,14 +1,14 @@
 [
   {
     "name": "Beranda",
-    "path": "/beranda"
+    "path": "/"
   },
   {
     "name": "Mentoring",
     "path": "/mentoring"
   },
   {
-    "name": "Course",
+    "name": "Kursus",
     "path": "/course"
   },
   {

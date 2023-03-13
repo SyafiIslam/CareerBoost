@@ -35,7 +35,7 @@ const MentorSwipe = ({
       <div className="flex flex-col xl:flex-row gap-8">
         <div className="flex flex-col">
           <div>
-            <p className="h6 text-neutral-600">Bidang</p>
+            <p className="p1 text-neutral-400">Bidang</p>
           </div>
           <div className="flex gap-2 mt-3">
             {bidang.map((list, index) => {
@@ -52,7 +52,7 @@ const MentorSwipe = ({
         </div>
         <div className="flex flex-col">
           <div>
-            <p className="h6 text-neutral-600">Keahlian</p>
+            <p className="p1 text-neutral-400">Keahlian</p>
           </div>
           <div className="flex gap-2 mt-3">
             {skill.map((list, index) => {

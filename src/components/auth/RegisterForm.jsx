@@ -1,4 +1,4 @@
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import Select from "react-select";
 import PrimaryButton from "../button/PrimaryButton";
 import Interest from "../../data/Interest";
@@ -8,6 +8,8 @@ import { useState } from "react";
 import BaseURL from "../../api/BaseURL";
 
 const RegisterForm = () => {
+
+  const navigate= useNavigate()
   const [auth, setAuth] = useState({
     full_name: "",
     username: "",
@@ -38,8 +40,8 @@ const RegisterForm = () => {
       interestID: auth.interestID
     })
     .then((res) => {
-      console.log(res);
-      <Navigate to= '/login' />
+      console.log(auth);
+      navigate('/login')
     }).catch((err) => {
       console.log(err);
     });

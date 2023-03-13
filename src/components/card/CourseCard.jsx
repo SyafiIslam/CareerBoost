@@ -11,7 +11,7 @@ const Card = () => {
             <div className="flex justify-center">
               <img className="w-44 xl:w-64" src={data.img} />
             </div>
-            <div className="flex flex-col mt-3 justify-center items-center">
+            <div className="flex flex-col mt-3 justify-center items-left">
               <h5 className="text-primary600 font-bold p1">
                 {data.title}
               </h5>
