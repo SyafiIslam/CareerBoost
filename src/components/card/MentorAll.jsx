@@ -4,17 +4,28 @@ import mentor from "../../data/mentoring.json";
 import { HiDotsHorizontal } from "react-icons/hi";
 import loc from "../../assets/magang/location.svg";
 import BaseURL from "../../api/BaseURL";
+import Cookies from "js-cookie";
 
 const MentorAll = () => {
+  const token = Cookies.get('token')
+  console.log(token);
 
-  useEffect(() =>{
-    BaseURL.get("api/mentorinfo?limit=3&page=2")
-    .then((res) => {
-      console.log(res);
-    }).catch((err) => {
-      console.log(err);
-    });
-  },[])
+  const getAllMentor = async () => {
+    await BaseURL.get("api/mentorinfo?limit=3&page=1", {
+
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    getAllMentor();
+  }, []);
   return (
     <>
       {mentor.map((data, index) => {

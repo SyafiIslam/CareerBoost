@@ -29,7 +29,7 @@ const Mentor2 = () => {
         </div>
 
         <div className="flex flex-col xl:flex-row justify-between items-center xl:items-start mt-8 basis-2/4">
-          <div className="bg-neutral-50 flex flex-col p-6 rounded-3xl shadow-md gap-3 sticky top-28">
+          <div className="bg-neutral-50 flex flex-col p-6 rounded-3xl shadow-md gap-3 xl:sticky xl:top-28">
             <h1 className="h5 font-bold mb-6 ">Category</h1>
             {interest.map((data, index) => {
               return (
