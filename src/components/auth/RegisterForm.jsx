@@ -31,18 +31,7 @@ const RegisterForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     inputInterest()
-    if (auth.password.length < 8) {
-      setMsg('Password harus 8 karakter')
-      return
-
-    } else if (auth.username < 5) {
-      setMsg('Username minimal 5 karakter')
-
-    }
-    else if (auth.username > 5) {
-      setMsg('Username maksimal 20 karakter')
-    }
-
+    
     await BaseURL.post("user/register", {
       full_name: auth.full_name,
       username: auth.username,
