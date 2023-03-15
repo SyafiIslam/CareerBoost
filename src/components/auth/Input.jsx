@@ -5,9 +5,11 @@ const Input = ({
   id,
   holder,
   handleChange,
+  value,
 }) => {
   return (
     <input
+      value={value}
       required
       type={type}
       id={id}

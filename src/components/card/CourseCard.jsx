@@ -13,7 +13,7 @@ const Card = () => {
             className="flex flex-col justify-center bg-neutral-50 w-10/12 md:w-70 xl:w-72 2xl:w-64 rounded-3xl shadow-lg"
           >
             <img className="w-full xl:w-64" src={data.img} />
-            <div className="flex flex-col mt-3 justify-center items-left p-2">
+            <div className="flex flex-col mt-3 justify-center items-center p-4">
               <h5 className="text-primary600 font-bold p1">{data.title}</h5>
               <div className="flex gap-2 my-3">
                 <p className="text-xl md:text-2xl">{data.star}</p>
@@ -25,7 +25,7 @@ const Card = () => {
                 </div>
               </div>
               <div className="flex justify-center">
-                <p className="p3 text-justify xl:text-left">{data.desc}</p>
+                <p className="p3 text-center xl:text-left">{data.desc}</p>
               </div>
               <div className="self-start mt-3">
                 <p className="text-secondary500 font-bold self-start h6">

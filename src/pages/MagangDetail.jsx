@@ -105,11 +105,22 @@ const MagangDetail = () => {
             <PrimaryButton
               handleClick={() => {
                 Swal.fire({
-                  position: "center",
-                  icon: "success",
-                  title: "Permintaan Magang Sedang di Proses",
-                  showConfirmButton: false,
-                  timer: 1500,
+                  title: "Apakah anda yakin ingin melamar magang?",
+                  icon: "warning",
+                  showCancelButton: true,
+                  confirmButtonColor: "#3085d6",
+                  cancelButtonColor: "#d33",
+                  confirmButtonText: "Ya",
+                  cancelButtonText: "Tidak",
+                  color: "#3A98B9",
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    Swal.fire(
+                      "Berhasil!",
+                      "Lamaran anda sedang di proses",
+                      "success",
+                    );
+                  }
                 });
               }}
             >

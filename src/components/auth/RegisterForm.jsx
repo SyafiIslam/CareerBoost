@@ -10,6 +10,7 @@ import BaseURL from "../../api/BaseURL";
 const RegisterForm = () => {
 
   const navigate= useNavigate()
+  const [msg, setMsg] = useState('')
   const [auth, setAuth] = useState({
     full_name: "",
     username: "",
@@ -30,20 +31,29 @@ const RegisterForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     inputInterest()
-    console.log(auth);
-    console.log(interest);
+    if (auth.password.length < 8) {
+      setMsg('Password harus 8 karakter')
+      return
+
+    } else if (auth.username < 5) {
+      setMsg('Username minimal 5 karakter')
+
+    }
+    else if (auth.username > 5) {
+      setMsg('Username maksimal 20 karakter')
+    }
+
     await BaseURL.post("user/register", {
-      full_name: auth.fullname,
+      full_name: auth.full_name,
       username: auth.username,
       email: auth.email,
       password: auth.password,
       interestID: auth.interestID
     })
     .then((res) => {
-      console.log(auth);
       navigate('/login')
     }).catch((err) => {
-      console.log(err);
+      setMsg(err.response.data.message)
     });
   };
 
@@ -54,6 +64,7 @@ const RegisterForm = () => {
         onSubmit={handleSubmit}
         className="flex flex-col gap-6 sm:gap-10 mt-10 sm:mt-8 md:mt-5 w-100% md:w-11/12 lg:w-10/12 xl:gap-8 xl:w-7/12 2xl:gap-10 2xl:w-6/12 "
       >
+        <p className="h6 text-red-400 font-bold">{msg}</p>
         <h1 className="text-3xl md:text-4xl text-primary600 font-extrabold 2xl:mt-10">
           SIGN UP
         </h1>

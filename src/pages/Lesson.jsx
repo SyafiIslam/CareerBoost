@@ -10,7 +10,7 @@ const Lesson = () => {
         <h1 className='h4 font-bold'>
           HTML Dasar : Pengenalan
         </h1>
-        <video className='my-8 xl:w-7/12 mx-auto rounded-2xl' src={video} controls></video>
+        <video className='my-8 xl:w-7/12 mx-auto rounded-2xl' src="https://www.youtube.com/watch?v=NrO0CJCbYLA" controls></video>
         <h2 className="font-bold mb-6 h4">Konten Kursus</h2>
             <Dropdown />
             <Dropdown />

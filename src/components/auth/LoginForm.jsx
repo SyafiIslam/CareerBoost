@@ -26,7 +26,7 @@ const LoginForm = () => {
         window.location.reload()
       })
       .catch((err) => {
-        // setMsg(err.response.data.message)
+        setMsg(err.response.data.message)
       });
   };
   return (
