@@ -7,6 +7,7 @@ const Input = ({
   handleChange,
   value,
 }) => {
+
   return (
     <input
       value={value}

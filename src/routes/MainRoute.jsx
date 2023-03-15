@@ -45,8 +45,8 @@ const MainRoute = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Route>
-        <Route element={<ProtectedRoute />}>
           <Route path="/" element={<Home />} />
+        <Route element={<ProtectedRoute />}>
           <Route path="/course" element={<Course />} />
           <Route path="/courseDetail" element={<CourseDetail />} />
           <Route path="/courseCheckout" element={<CourseCheckout />} />

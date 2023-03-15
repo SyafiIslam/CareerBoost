@@ -6,7 +6,6 @@ import PrimaryButton from "../button/PrimaryButton";
 import Input from "./Input";
 import Label from "./Label";
 import BaseURL from "../../api/BaseURL";
-import Cookies from "js-cookie";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -22,7 +21,6 @@ const LoginForm = () => {
       .then((res) => {
         console.log(res);
         window.localStorage.setItem('token', res.data.data.token)
-        Cookies.set('token',window.localStorage.getItem('token'))
         window.location.reload()
       })
       .catch((err) => {

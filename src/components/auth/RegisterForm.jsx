@@ -1,5 +1,5 @@
 import { Link, Navigate, useNavigate } from "react-router-dom";
-import Select from "react-select";
+import SelectInput from "./SelectInput";
 import PrimaryButton from "../button/PrimaryButton";
 import Interest from "../../data/Interest";
 import Input from "./Input";
@@ -8,9 +8,8 @@ import { useState } from "react";
 import BaseURL from "../../api/BaseURL";
 
 const RegisterForm = () => {
-
-  const navigate= useNavigate()
-  const [msg, setMsg] = useState('')
+  const navigate = useNavigate();
+  const [msg, setMsg] = useState("");
   const [auth, setAuth] = useState({
     full_name: "",
     username: "",
@@ -18,40 +17,33 @@ const RegisterForm = () => {
     password: "",
     interestID: [],
   });
-
-  const [interest, setInterest] = useState([])
-
-  const inputInterest= () => {
-    auth.interestID= []
-    interest.map((item) => {
-      auth.interestID.push(parseInt(item.value))
-    })
-  }
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    inputInterest()
-    
+    console.log(auth);
+    // inputInterest();
+
     await BaseURL.post("user/register", {
       full_name: auth.full_name,
       username: auth.username,
       email: auth.email,
       password: auth.password,
-      interestID: auth.interestID
+      interestID: auth.interestID,
     })
-    .then((res) => {
-      navigate('/login')
-    }).catch((err) => {
-      setMsg(err.response.data.message)
-    });
+      .then((res) => {
+        navigate("/login");
+      })
+      .catch((err) => {
+        setMsg(err.response.data.message);
+      });
   };
-
 
   return (
     <div className="basis-1/2 flex justify-center items-center">
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-6 sm:gap-10 mt-10 sm:mt-8 md:mt-5 w-100% md:w-11/12 lg:w-10/12 xl:gap-8 xl:w-7/12 2xl:gap-10 2xl:w-6/12 "
+        className="flex flex-col gap-6 sm:gap-10 mt-10 sm:mt-8 md:mt-5 md:w-11/12 lg:w-10/12 xl:gap-8 xl:w-7/12 2xl:gap-10 2xl:w-6/12 "
       >
         <p className="h6 text-red-400 font-bold">{msg}</p>
         <h1 className="text-3xl md:text-4xl text-primary600 font-extrabold 2xl:mt-10">
@@ -84,48 +76,33 @@ const RegisterForm = () => {
 
         <div className="flex flex-col">
           <Label id="mail" text="Email" />
-          <Input 
-          type="text" 
-          id="mail" 
-          holder="Enter your email"
-          handleChange={(e) => {
-            setAuth({...auth, email: e.target.value})
-          }}
+          <Input
+            type="text"
+            id="mail"
+            holder="Enter your email"
+            handleChange={(e) => {
+              setAuth({ ...auth, email: e.target.value });
+            }}
           />
         </div>
 
         <div className="flex flex-col">
           <Label id="pwd" text="Password" />
-          <Input type="password" 
-          id="pwd" 
-          holder="Enter your password"
-          handleChange={(e) => {
-            setAuth({...auth, password: e.target.value})
-          }}
+          <Input
+            type="password"
+            id="pwd"
+            holder="Enter your password"
+            handleChange={(e) => {
+              setAuth({ ...auth, password: e.target.value });
+            }}
           />
         </div>
 
-        <div className="flex flex-col">
-          <Label id="interest" text="Interest" />
-          <Select
-            placeholder="Choose Interest"
-            styles={{
-              control: (baseStyles, state) => ({
-                ...baseStyles,
-                borderColor: "#94A3B8",
-                borderWidth: "2px",
-                borderRadius: "32px",
-                padding: ".5% 2%",
-                fontSize: "18px",
-              }),
-            }}
-            isMulti
-            options={Interest}
-            onChange={(item) => {
-              setInterest(item)
-            }}
-          />
+        <div className="flex w-full flex-col">
+          <Label text="Interest" />
+          <SelectInput input={auth} setInput= {setAuth} interestID={auth.interestID} />
         </div>
+
         <div className="flex flex-col">
           <PrimaryButton>Sign Up</PrimaryButton>
         </div>

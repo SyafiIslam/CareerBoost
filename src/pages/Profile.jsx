@@ -13,8 +13,7 @@ const Profile = () => {
   const inputFile = useRef(null);
 
   const handleLogout = () => {
-    window, localStorage.removeItem("token");
-    Cookies.remove("token");
+    window.localStorage.removeItem("token");
     window.location.reload();
   };
 

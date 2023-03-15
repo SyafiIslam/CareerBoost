@@ -8,12 +8,43 @@ import interest from "../data/Interest";
 import mentor from "../data/mentoring.json";
 import MentorAll from "../components/card/MentorAll";
 import MentorSwipe from "../components/card/MentorSwipe";
+import Slider from "react-slick";
 
 const Mentor2 = () => {
+  const settings = {
+    dots: true,
+    arrows: false,
+    centerMode: false,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 821,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1
+        }
+      },
+    ]
+  };
 
   return (
     <WebLayout>
-      <div className="p-6 xl:p-16">
+      <div className="p-4 xl:p-16 w-full">
         <div className="flex flex-col xl:flex-row gap-16">
           <div className="flex items-center justify-center flex-col gap-6 basis-3/4">
             <p className="h3 font-bold text-primary600 text-center xl:text-left">
@@ -28,7 +59,7 @@ const Mentor2 = () => {
           <img className="basis-5/12" src={jumbo} alt="" />
         </div>
 
-        <div className="flex flex-col xl:flex-row justify-between items-center xl:items-start mt-8 basis-2/4">
+        <div className="flex flex-col xl:flex-row justify-between items-center xl:items-start mt-8">
           <div className="bg-neutral-50 flex flex-col p-6 rounded-3xl shadow-md gap-3 xl:sticky xl:top-28">
             <h1 className="h5 font-bold mb-6 ">Category</h1>
             {interest.map((data, index) => {
@@ -43,8 +74,8 @@ const Mentor2 = () => {
             })}
           </div>
 
-          <div className="flex flex-col basis-3/4">
-            <div className="flex justify-center xl:justify-start flex-row-reverse my-16 w-full">
+          <div className="flex flex-col w-4/5">
+            <div className="flex justify-center xl:justify-start flex-row-reverse my-16">
               <input
                 type="text"
                 placeholder="Search"
@@ -57,29 +88,31 @@ const Mentor2 = () => {
               />
             </div>
 
-            <div>
+            <div className="">
               <p className="h4 font-bold mb-16">Recommended</p>
-              <div className="flex flex-wrap gap-8">
-                {mentor.map((list, index) => {
-                  return (
-                    <MentorSwipe
-                      avatar={list.avatar}
-                      work={list.work}
-                      lokasi={list.lokasi}
-                      rate={list.rate}
-                      name={list.name}
-                      bidang={list.bidang}
-                      skill={list.skill}
-                      key={index}
-                    />
-                  );
-                })}
+              <div className="flex flex-col gap-8">
+                <Slider {...settings}>
+                  {mentor.map((list, index) => {
+                    return (
+                      <MentorSwipe
+                        avatar={list.avatar}
+                        work={list.work}
+                        lokasi={list.lokasi}
+                        rate={list.rate}
+                        name={list.name}
+                        bidang={list.bidang}
+                        skill={list.skill}
+                        key={index}
+                      />
+                    );
+                  })}
+          
+                </Slider>
               </div>
             </div>
 
             <div className="flex gap-16 flex-col">
               <div className="flex justify-between">
-
                 <p className="h4 font-bold my-16">All</p>
 
                 <div className="flex items-center gap-4 md:gap-5">
