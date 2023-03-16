@@ -130,7 +130,7 @@ const Navbar = () => {
           <Link to="/login">
             <OtherButton>Masuk</OtherButton>
           </Link>
-          <Link className="/register">
+          <Link to="/register">
             <PrimaryButton>Daftar</PrimaryButton>
           </Link>
         </div>
