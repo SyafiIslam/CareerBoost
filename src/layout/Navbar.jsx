@@ -102,7 +102,7 @@ const Navbar = () => {
               </p>
             </PrimaryButton>
           </Link>
-          <Link className="/register">
+          <Link to="/register">
             <OtherButton>
               <p className="p1 font-bold">
                 Daftar
