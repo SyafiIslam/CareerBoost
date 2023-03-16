@@ -17,7 +17,6 @@ const MentorAll = () => {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => {
-        console.log(res.data.data);
         setData(res.data.data);
       })
       .catch((err) => {
@@ -27,7 +26,7 @@ const MentorAll = () => {
 
   useEffect(() => {
     getAllMentor();
-  }, []);
+  }, [token]);
   return (
     <>
       {data.map((data, index) => {
@@ -87,7 +86,7 @@ const MentorAll = () => {
                 <div className="flex gap-2 mt-3">
                   {data.interest.map((list) => {
                     return (
-                      <p className="bg-primary400 text p2 text-neutral-200 py-3 px-6 rounded-xl">
+                      <p key={list.nama} className="bg-primary400 text p2 text-neutral-200 py-3 px-6 rounded-xl">
                         {list.nama}
                       </p>
                     );
@@ -99,9 +98,9 @@ const MentorAll = () => {
                   <p className="h6 text-neutral-600">Keahlian</p>
                 </div>
                 <div className="flex gap-2 mt-3">
-                  {data.skill.map((list) => {
+                  {data.skill.map((list, index) => {
                     return (
-                      <p className="bg-primary400 text p2 text-neutral-200 py-3 px-6 rounded-xl">
+                      <p key={index} className="bg-primary400 text p2 text-neutral-200 py-3 px-6 rounded-xl">
                         {list.nama}
                       </p>
                     );

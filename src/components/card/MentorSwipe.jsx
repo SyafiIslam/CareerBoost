@@ -61,7 +61,7 @@ const MentorSwipe = ({
                   key={index}
                   className="bg-primary400 text p2 text-neutral-200 py-3 px-6 rounded-xl"
                 >
-                  {list}
+                  {list.nama}
                 </p>
               );
             })}

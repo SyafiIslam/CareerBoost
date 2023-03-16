@@ -9,6 +9,8 @@ import BaseURL from "../../api/BaseURL";
 
 const UserData = () => {
   const [userData, setuserData] = useState([]);
+  const token = window.localStorage.getItem("token");
+
 
   const simpan = () => {
     Swal.fire({
@@ -61,7 +63,6 @@ const UserData = () => {
   };
 
   const getUserData = async () => {
-    const token = window.localStorage.getItem("token");
     await BaseURL.get("/api/profile", {
       headers: { Authorization: `Bearer ${token}` },
     })
@@ -76,7 +77,7 @@ const UserData = () => {
 
   useEffect(() => {
     getUserData();
-  }, []);
+  }, [token]);
   return (
     <div className="flex flex-col gap-8 xl:gap-16">
       <div className="flex flex-col">
