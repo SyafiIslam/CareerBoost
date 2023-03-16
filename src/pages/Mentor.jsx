@@ -10,9 +10,11 @@ import MentorAll from "../components/card/MentorAll";
 import MentorSwipe from "../components/card/MentorSwipe";
 import Slider from "react-slick";
 import BaseURL from "../api/BaseURL";
+import { ImSpinner2 } from "react-icons/im";
+
 
 const Mentor = () => {
-  const [mentorData, setMentorData] = useState([]);
+  const [data, setData] = useState([]);
   const [load, setLoad] = useState(true);
   const token = window.localStorage.getItem("token");
 
@@ -55,10 +57,8 @@ const Mentor = () => {
       }
     )
       .then((res) => {
-        // console.log(res.data.data);
-        setMentorData(res.data.data);
-        setLoad(false)
-        console.log(mentorData);
+        setData(res.data.data);
+        setLoad(false);
       })
       .catch((err) => {
         console.log(err);
@@ -66,17 +66,19 @@ const Mentor = () => {
   };
 
   const checkData = () => {
-    console.log(mentorData);
+    console.log(data);
   };
 
   useEffect(() => {
     getAllMentor();
-  }, [token]);
+  }, []);
 
   return (
     <WebLayout>
       {load ? (
-        <h1 className="h1 h-full font-bold justify-center items-center">loading</h1>
+        <div className="container-svg flex justify-center items-center h-screen">
+          <ImSpinner2 className="w-24 h-24 animate-spin text-primary400" />
+        </div>
       ) : (
         <div className="p-4 xl:p-16 w-full">
           <div className="flex flex-col xl:flex-row gap-16">
@@ -126,17 +128,19 @@ const Mentor = () => {
                 <p className="h4 font-bold mb-16">Recommended</p>
                 <div className="flex flex-col gap-8">
                   <Slider {...settings}>
-                    {mentor.map((list, index) => {
+                    {data.map((list, index) => {
                       return (
                         <MentorSwipe
-                          avatar={list.avatar}
-                          work={list.work}
+                          key={index}
+                          profile_photo={list.profile_photo}
+                          full_name={list.full_name}
+                          perusahaan={list.perusahaan}
                           lokasi={list.lokasi}
                           rate={list.rate}
-                          name={list.name}
-                          bidang={list.bidang}
+                          deskripsi={list.deskripsi}
+                          exp={list.exp}
+                          interest={list.interest}
                           skill={list.skill}
-                          key={index}
                         />
                       );
                     })}
@@ -150,15 +154,28 @@ const Mentor = () => {
 
                   <div className="flex items-center gap-4 md:gap-5">
                     <img src={kiri} alt="" />
-                    <p onClick={() => checkData()} className="h6">
-                      1
-                    </p>
+                    <p className="h6">1</p>
                     <p className="h6">2</p>
                     <p className="h6">3</p>
                     <img src={kanan} alt="" />
                   </div>
                 </div>
-                <MentorAll />
+                {data.map((list, index) => {
+                  return (
+                    <MentorAll
+                      key={index}
+                      profile_photo={list.profile_photo}
+                      full_name={list.full_name}
+                      perusahaan={list.perusahaan}
+                      lokasi={list.lokasi}
+                      rate={list.rate}
+                      deskripsi={list.deskripsi}
+                      exp={list.exp}
+                      interest={list.interest}
+                      skill={list.skill}
+                    />
+                  );
+                })}
               </div>
             </div>
           </div>

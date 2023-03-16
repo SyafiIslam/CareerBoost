@@ -4,14 +4,17 @@ import mentor from "../../data/mentoring.json";
 import loc from "../../assets/magang/location.svg";
 
 const MentorSwipe = ({
-  bidang,
-  skill,
-  avatar,
-  work,
+  profile_photo,
+  full_name,
+  perusahaan,
   lokasi,
   rate,
-  name,
+  deskripsi,
+  exp,
+  interest,
+  skill,
 }) => {
+  console.log();
   return (
     <Link
       to="/mentoringInfo/data"
@@ -19,11 +22,11 @@ const MentorSwipe = ({
     >
       <div className="flex flex-col xl:flex-row items-start justify-start gap-3 x w-fulll:gap-1">
         <div className="w-2/12">
-          <img src={avatar} alt="" />
+          <img src={profile_photo} alt="" />
         </div>
         <div className="flex flex-col w-full gap-3">
-          <p className="h3 font-bold text-primary300">{name}</p>
-          <p className="p1 font-medium text-neutral-700">{work}</p>
+          <p className="h3 font-bold text-primary300">{full_name}</p>
+          <p className="p1 font-medium text-neutral-700">{perusahaan}</p>
         </div>
         <div className="flex flex-col items-start xl:items-end justify-end gap-4"></div>
       </div>
@@ -38,13 +41,13 @@ const MentorSwipe = ({
             <p className="p1 text-neutral-400">Bidang</p>
           </div>
           <div className="flex gap-2 mt-3">
-            {bidang.map((list, index) => {
+            {interest.map((list, index) => {
               return (
                 <p
                   key={index}
-                  className="bg-primary400 text p2 text-neutral-200 py-3 px-6 rounded-xl"
+                  className="bg-primary400 w-fit p2 text-neutral-200 py-3 px-6 rounded-xl"
                 >
-                  {list}
+                  {list.nama}
                 </p>
               );
             })}

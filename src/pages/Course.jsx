@@ -27,13 +27,13 @@ const Course = () => {
   }, []);
 
   return (
-    <>
+    <WebLayout>
       {load ? (
         <div className="container-svg flex justify-center items-center h-screen">
           <ImSpinner2 className="w-24 h-24 animate-spin text-primary400" />
         </div>
       ) : (
-        <WebLayout>
+        <div>
           <div className="mt-8 p-4 xl:px-16 flex flex-col xl:flex-row xl:items-center xl:justify-evenly xl:gap-28">
             <div className="flex flex-col gap-5 xl:w-6/12">
               <h1 className="h3 font-bold text-primary600 text-center xl:text-left">
@@ -111,9 +111,9 @@ const Course = () => {
               );
             })}
           </div>
-        </WebLayout>
+        </div>
       )}
-    </>
+    </WebLayout>
   );
 };
 
