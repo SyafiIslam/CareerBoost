@@ -21,9 +21,7 @@ const RegisterForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(auth);
-    // inputInterest();
-
+    setMsg('')
     await BaseURL.post("user/register", {
       full_name: auth.full_name,
       username: auth.username,
