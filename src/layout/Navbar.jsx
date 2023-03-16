@@ -6,10 +6,12 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 import navList from "../data/Navlist.json";
 import { Link, useLocation, useMatch } from "react-router-dom";
+import PrimaryButton from "../components/button/PrimaryButton";
+import OtherButton from "../components/button/OtherButton";
 
 const Navbar = () => {
   const [hidden, setHidden] = useState("true");
-  let loc= useLocation()
+  let loc = useLocation();
 
   return (
     <div className="flex py-4 px-4 text-lg z-50 font-medium justify-between items-center shadow-md sticky top-0 bg-white ">
@@ -22,7 +24,9 @@ const Navbar = () => {
               <Link
                 key={index}
                 to={list.path}
-                className={`${loc.pathname === list.path && "text-primary400 font-bold"} hover:font-bold transition-all duration-200`}
+                className={`${
+                  loc.pathname === list.path && "text-primary400 font-bold"
+                } hover:font-bold transition-all duration-200`}
               >
                 <li>{list.name}</li>
               </Link>
@@ -41,7 +45,9 @@ const Navbar = () => {
               <ul key={index}>
                 <Link
                   to={list.path}
-                  className={`${loc.pathname === list.path && "text-primary400 font-bold"} hover:font-bold transition-all duration-200`}
+                  className={`${
+                    loc.pathname === list.path && "text-primary400 font-bold"
+                  } hover:font-bold transition-all duration-200`}
                   onClick={() => {
                     setHidden(!hidden);
                   }}
@@ -51,6 +57,8 @@ const Navbar = () => {
               </ul>
             );
           })}
+        {
+          window.localStorage.getItem('token') ?
           <Link
             to="/profile/data"
             className="hover:font-bold transition-all duration-200"
@@ -58,17 +66,56 @@ const Navbar = () => {
               setHidden(!hidden);
             }}
           >
-            <li className={`${loc.pathname.includes('profile') && 'text-primary400'} h5 list-none`}>Profile</li>
+            <li
+              className={`${
+                loc.pathname.includes("profile") && "text-primary400"
+              } h5 list-none`}
+            >
+              Profile
+            </li>
+          </Link>
+          :
+          <div className="flex w-full justify-around items-center">
+          <Link to="/login">
+            <PrimaryButton>
+              <p className="p1 font-bold">
+              Masuk
+              </p>
+            </PrimaryButton>
+          </Link>
+          <Link className="/register">
+            <OtherButton>
+              <p className="p1 font-bold">
+                Daftar
+              </p>
+            </OtherButton>
           </Link>
         </div>
-      </div>
-      <Link to='/profile/data'>
-        <div className={`${loc.pathname.includes('profile') && 'text-primary400 font-bold'} hidden md:flex items-center gap-5 md:gap-2 hover:font-bold hover:text-primary400 transition-all duration-300`}>
-          <IoMdArrowDropdown className="" />
-          <p className="text-base ">Muhammad Zidan</p>
-          <img src={avatar} className="md:w-2/12" />
+        }
         </div>
-      </Link>
+      </div>
+      {window.localStorage.getItem("token") ? (
+        <Link to="/profile/data">
+          <div
+            className={`${
+              loc.pathname.includes("profile") && "text-primary400 font-bold"
+            } hidden md:flex items-center gap-5 md:gap-2 hover:font-bold hover:text-primary400 transition-all duration-300`}
+          >
+            <IoMdArrowDropdown className="" />
+            <p className="text-base ">Muhammad Zidan</p>
+            <img src={avatar} className="md:w-2/12" />
+          </div>
+        </Link>
+      ) : (
+        <div className="hidden md:flex gap-6 mr-24">
+          <Link to="/login">
+            <OtherButton>Masuk</OtherButton>
+          </Link>
+          <Link className="/register">
+            <PrimaryButton>Daftar</PrimaryButton>
+          </Link>
+        </div>
+      )}
       <div className="md:hidden">
         <button>
           {hidden ? (

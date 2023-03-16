@@ -15,17 +15,19 @@ const UserData = () => {
       title: "Apakah Anda Yakin?",
       icon: "warning",
       showCancelButton: true,
+      iconColor: "#3A98B9",
       confirmButtonColor: "#3A98B9",
-      color: '#3A98B9',
+      color: "#3A98B9",
       cancelButtonColor: "#d33",
       confirmButtonText: "Simpan",
+      cancelButtonText: 'Tidak'
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire({
           title: "Berhasil Disimpan",
-          color: '#3A98B9',
+          color: "#3A98B9",
           icon: "success",
-          iconColor: '#3A98B9',
+          iconColor: "#3A98B9",
           showConfirmButton: false,
           timer: 1500,
         });
@@ -33,23 +35,47 @@ const UserData = () => {
     });
   };
 
-  const getUserData= async () => {
-    
-    const token = window.localStorage.getItem('token')
+  const batalkan = () => {
+    Swal.fire({
+      title: "Apakah Anda Yakin Ingin membatalkan?",
+      icon: "warning",
+      showCancelButton: true,
+      iconColor: "#3A98B9",
+      confirmButtonColor: "#3A98B9",
+      color: "#3A98B9",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Batal",
+      cancelButtonText: 'tidak',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Perubahan dibatalkan",
+          color: "#3A98B9",
+          icon: "success",
+          iconColor: "#3A98B9",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    });
+  };
+
+  const getUserData = async () => {
+    const token = window.localStorage.getItem("token");
     await BaseURL.get("/api/profile", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => {
         console.log(res.data.data);
-        setuserData(res.data.data)
+        setuserData(res.data.data);
       })
       .catch((err) => {
         console.log(err);
       });
-  }
+  };
 
   useEffect(() => {
-    getUserData()
+    getUserData();
   }, []);
   return (
     <div className="flex flex-col gap-8 xl:gap-16">
@@ -109,7 +135,12 @@ const UserData = () => {
         </div>
         <div className="flex flex-col basis-1/2 gap-6">
           <p className="font-bold h5">Interest</p>
-          <SelectInput   input={userData} setInput= {setuserData} interestID={userData.interest} defaultInterest={userData.interest} />
+          <SelectInput
+            input={userData}
+            setInput={setuserData}
+            interestID={userData.interest}
+            defaultInterest={userData.interest}
+          />
         </div>
       </div>
       <div className="flex flex-col gap-6 justify-center p-4 xl:p-0 ">
@@ -124,13 +155,19 @@ const UserData = () => {
       <div className="flex justify-center md:justify-start gap-10">
         <PrimaryButton
           handleClick={() => {
-            console.log(userData);
-            // simpan();
+            // console.log(userData);
+            simpan();
           }}
         >
           Simpan
         </PrimaryButton>
-        <OtherButton>Batalkan</OtherButton>
+        <OtherButton
+          handleClick={() => {
+            batalkan()
+          }}
+        >
+          Batalkan
+        </OtherButton>
       </div>
     </div>
   );

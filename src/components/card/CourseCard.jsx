@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Courses } from "../../data/Courses.js";
 import BaseURL from "../../api/BaseURL";
-import Cookies from "js-cookie";
 import { BsStarFill, BsStar } from "react-icons/bs";
 import Rating from "react-rating";
 

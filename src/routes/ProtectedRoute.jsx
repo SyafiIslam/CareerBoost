@@ -5,7 +5,7 @@ const ProtectedRoute = () => {
   if (window.localStorage.getItem('token')) 
     return <Outlet />
     
-    return <Navigate to='/login' />
+    return <Navigate to='/' />
 }
 
 export default ProtectedRoute

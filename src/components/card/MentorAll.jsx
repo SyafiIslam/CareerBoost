@@ -4,7 +4,6 @@ import mentor from "../../data/mentoring.json";
 import { HiDotsHorizontal } from "react-icons/hi";
 import loc from "../../assets/magang/location.svg";
 import BaseURL from "../../api/BaseURL";
-import Cookies from "js-cookie";
 import Rating from "react-rating";
 import { BsStarFill, BsStar } from "react-icons/bs";
 
