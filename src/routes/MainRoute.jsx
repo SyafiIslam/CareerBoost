@@ -58,7 +58,7 @@ const MainRoute = () => {
             <Route path="/mentoringInfo/data/:id" element={<DataPribadi />} />
             <Route path="/mentoringInfo/pengalaman/:id" element={<Pengalaman />} />
           </Route>
-          <Route path="/mentorCheckout" element={<MentorCheckout />} />
+          <Route path="/mentorCheckout/:id" element={<MentorCheckout />} />
           <Route path="/mentorConfirm" element={<MentorConfirm />} />
           <Route path="/profile" element={<Profile />}>
             <Route path="/profile/data" element={<UserData />} />

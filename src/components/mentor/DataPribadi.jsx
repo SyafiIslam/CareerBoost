@@ -21,9 +21,7 @@ const DataPribadi = () => {
       })
       .catch(() => {});
 
-    setTimeout(() => {
-      setLoad(false);
-    }, 2000);
+    setLoad(false);
   }, [load]);
   return (
     // Datanya kosong ntah kenapa
@@ -130,15 +128,16 @@ const DataPribadi = () => {
         <div className="flex flex-col xl:flex-row gap-2 xl:gap-6">
           <p className="h6">⭐⭐⭐⭐⭐</p>
           <p className="h6 font-semibold">
-            5.0 <span className="h6 text-neutral-400 font-normal">(40 Reviews)</span>
+            5.0{" "}
+            <span className="h6 text-neutral-400 font-normal">
+              (40 Reviews)
+            </span>
           </p>
         </div>
       </div>
       <div className="flex flex-col gap-2 xl:gap-8">
         <p className="font-bold h5">Fee</p>
-        <p className="h4 font-extrabold text-secondary400">
-          Rp 59.000
-        </p>
+        <p className="h4 font-extrabold text-secondary400">Rp 59.000</p>
       </div>
     </div>
   );

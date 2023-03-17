@@ -10,7 +10,8 @@ import { ImSpinner2 } from "react-icons/im";
 import InfoMagang from "../components/magang/InfoMagang";
 
 const MagangDetail = () => {
-
+  const id = useParams();
+  const token = window.localStorage.getItem("token"); 
   return (
     <WebLayout>
       <div className="flex flex-col xl:flex-row p-4 xl:p-16 gap-6">
@@ -32,14 +33,24 @@ const MagangDetail = () => {
                   cancelButtonText: "Tidak",
                 }).then((result) => {
                   if (result.isConfirmed) {
-                    Swal.fire({
-                      title: "Lamaran anda sedang diproses",
-                      color: "#3A98B9",
-                      icon: "success",
-                      iconColor: "#3A98B9",
-                      showConfirmButton: false,
-                      timer: 1500,
-                    });
+                    BaseURL.get(`api/maganginfo/checkout/${id.id}`, {
+                      headers: { Authorization: `Bearer ${token}` },
+                    })
+                      .then(() => {
+                        setRec(res);
+                        console.log(res);
+                        Swal.fire({
+                          title: "Lamaran anda sedang diproses",
+                          color: "#3A98B9",
+                          icon: "success",
+                          iconColor: "#3A98B9",
+                          showConfirmButton: false,
+                          timer: 1500,
+                        });
+                      })
+                      .catch((err) => {
+                        console.log(err);
+                      });
                   }
                 });
               }}
