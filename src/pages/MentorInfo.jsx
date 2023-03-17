@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import WebLayout from "../layout/WebLayout";
 import avatar2 from "../assets/mentoring/avatar2.svg";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 
 const MentorInfo = () => {
   const [clicked, setClicked] = useState("data");
+  const id= useParams()
   return (
     <WebLayout>
       <div className="flex flex-col xl:flex-row p-6 gap-8">
@@ -15,7 +16,7 @@ const MentorInfo = () => {
               <h1 className="font-bold h5">Informasi Mentor</h1>
               <Link
                 onClick={() => setClicked('data')}
-                to="data"
+                to={`data/${id.id}`}
                 className={`${
                   clicked === "data" && "text-primary400 font-bold"
                 }  h6 transition-all duration-300`}
@@ -24,7 +25,7 @@ const MentorInfo = () => {
               </Link>
               <Link
               onClick={() => setClicked('pengalaman')}
-                to="pengalaman"
+                to={`pengalaman/${id.id}`}
                 className={`${
                   clicked === "pengalaman" && "text-primary400 font-bold"
                 }  h6 transition-all duration-300`}
@@ -40,7 +41,7 @@ const MentorInfo = () => {
           </Link>
         </div>
         <div className=" py-6 px-8 bg-neutral-50 rounded-xl shadow-xl basis-9/12 h-max xl:mt-0">
-          <Outlet />
+          <Outlet/>
         </div>
       </div>
     </WebLayout>

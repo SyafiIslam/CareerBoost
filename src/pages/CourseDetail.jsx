@@ -5,8 +5,9 @@ import PrimaryButton from "../components/button/PrimaryButton";
 import { Link, useParams } from "react-router-dom";
 import BaseURL from "../api/BaseURL";
 import { BsStarFill, BsStar } from "react-icons/bs";
-import Rating from "react-rating";
+import ReactStars from "react-stars";
 import { ImSpinner2 } from "react-icons/im";
+import { toRupiah } from "../utils/ToRupiah";
 
 const CourseDetail = () => {
   const [load, setLoad] = useState(true);
@@ -20,6 +21,7 @@ const CourseDetail = () => {
     })
       .then((res) => {
         setData(res.data.data);
+        console.log(res.data.data);
         setLoad(false);
       })
       .catch((err) => {
@@ -47,18 +49,16 @@ const CourseDetail = () => {
                 {data.deskripsi}
               </p>
               <div className="flex items-center gap-1">
-                <Rating
-                  className="text-xl md:h6 font-medium text-yellow-400  "
-                  emptySymbol={<BsStar />}
-                  fullSymbol={<BsStarFill />}
-                  initialRating={data.rate}
-                  readonly
+                <ReactStars
+                  count={5}
+                  size={24}
+                  color1={"#ffd700"}
                 />
                 <p className="text-secondary500 p1">{data.rate}</p>
                 <p className="text-neutral-400 p2">({data.vote})</p>
               </div>
               <div className="flex xl:hidden my-5">
-                <Link to="/courseCheckout">
+                <Link to={`/courseCheckout/${id.id}`}>
                   <PrimaryButton>
                     <p className="p1">Daftar Sekarang</p>
                   </PrimaryButton>
@@ -87,7 +87,9 @@ const CourseDetail = () => {
             </div>
             <div className="flex flex-col py-4 px-8 mb-4">
               <h2 className="font-bold mb-2 h4">Konten Kursus</h2>
-              <Dropdown playlist={data.playlist} />
+              {data.playlist.map((list) => {
+                return <Dropdown list={list} />;
+              })}
             </div>
           </div>
           <div className="hidden xl:flex flex-col gap-6 sticky top-28 px-4 py-6 mx-auto bg-neutral-50 h-max w- rounded-xl shadow-lg">
@@ -102,8 +104,10 @@ const CourseDetail = () => {
             <div>
               <hr className="border-t-neutral-400" />
             </div>
-            <p className="h6 text-secondary500 font-bold">Rp {data.price}</p>
-            <Link to="/courseCheckout">
+            <p className="h6 text-secondary500 font-bold">
+              {toRupiah(data.price)}
+            </p>
+            <Link to={`/courseCheckout/${id.id}`}>
               <PrimaryButton>
                 <p className="p1">Daftar Sekarang</p>
               </PrimaryButton>

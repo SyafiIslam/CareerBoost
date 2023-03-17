@@ -1,20 +1,14 @@
 import React from "react";
 import data from "../../data/magangDetail.json";
 import loc from "../../assets/magang/location.svg";
+import { Link } from "react-router-dom";
 
 const detailRec = ({
   rec,
-  logo,
-  perusahaan,
-  interest,
-  lokasi,
-  skill,
-  release,
-  applied,
-  status_magang,
+  key
 }) => {
   return (
-    <div className="flex flex-col p-2 md:p-6 bg-neutral-50 xl:basis-5/12 shadow-lg rounded-xl">
+    <Link to={`/magangDetail/${key}`} className="flex flex-col p-2 md:p-6 bg-neutral-50 xl:basis-5/12 shadow-lg rounded-xl">
       <h1 className="font-bold h6 mb-8">Recommended</h1>
       <div className="flex flex-col gap-4">
         {rec.map((data, index) => {
@@ -24,7 +18,7 @@ const detailRec = ({
               className="bg-neutral-100 border-2 p-8 border-neutral-200 rounded-xl"
             >
               <div className="flex justify-between">
-                <div className="flex items-center  gap-2 w-8 xl:w-10 xl:gap-4">
+                <div className="flex items-center  gap-2 w-8 xl:w-10 2xl:w-12 xl:gap-4">
                   <img src={data.logo} alt="" />
                   <p className="p2 font-medium text-neutral-400">
                     {data.perusahaan}
@@ -58,7 +52,7 @@ const detailRec = ({
           );
         })}
       </div>
-    </div>
+    </Link>
   );
 };
 

@@ -12,7 +12,6 @@ import Slider from "react-slick";
 import BaseURL from "../api/BaseURL";
 import { ImSpinner2 } from "react-icons/im";
 
-
 const Mentor = () => {
   const [data, setData] = useState([]);
   const [load, setLoad] = useState(true);
@@ -125,20 +124,7 @@ const Mentor = () => {
                 <div className="flex flex-col gap-8">
                   <Slider {...settings}>
                     {data.map((list, index) => {
-                      return (
-                        <MentorSwipe
-                          key={index}
-                          profile_photo={list.profile_photo}
-                          full_name={list.full_name}
-                          perusahaan={list.perusahaan}
-                          lokasi={list.lokasi}
-                          rate={list.rate}
-                          deskripsi={list.deskripsi}
-                          exp={list.exp}
-                          interest={list.interest}
-                          skill={list.skill}
-                        />
-                      );
+                      return <MentorSwipe key={list.id} list={list} />;
                     })}
                   </Slider>
                 </div>
@@ -159,16 +145,8 @@ const Mentor = () => {
                 {data.map((list, index) => {
                   return (
                     <MentorAll
-                      key={index}
-                      profile_photo={list.profile_photo}
-                      full_name={list.full_name}
-                      perusahaan={list.perusahaan}
-                      lokasi={list.lokasi}
-                      rate={list.rate}
-                      deskripsi={list.deskripsi}
-                      exp={list.exp}
-                      interest={list.interest}
-                      skill={list.skill}
+                    key={list.id}
+                      list={list}
                     />
                   );
                 })}

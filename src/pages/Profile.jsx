@@ -96,7 +96,7 @@ const Profile = () => {
                   className="text-red-500 "
                 >
                   <p className="h6 hover:font-bold transition-all duration-300">
-                    Log out
+                    Keluar
                   </p>
                 </button>
               </Link>

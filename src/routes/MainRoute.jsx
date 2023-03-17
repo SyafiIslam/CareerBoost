@@ -37,7 +37,7 @@ const ScrollToTop = () => {
 
 const MainRoute = () => {
   return (
-    <>
+    <div className="flex-grow">
       <ScrollToTop />
       <Routes>
         <Route element={<AuthRoute />}>
@@ -48,15 +48,15 @@ const MainRoute = () => {
         <Route element={<ProtectedRoute />}>
           <Route path="/course" element={<Course />} />
           <Route path="/courseDetail/:id" element={<CourseDetail />} />
-          <Route path="/courseCheckout" element={<CourseCheckout />} />
-          <Route path="/courseConfirm" element={<CourseConfirm />} />
-          <Route path="/lesson" element={<Lesson />} />
+          <Route path="/courseCheckout/:id" element={<CourseCheckout />} />
+          <Route path="/courseConfirm/:id" element={<CourseConfirm />} />
+          <Route path="/lesson/:id" element={<Lesson />} />
           <Route path="/magang" element={<Magang />} />
           <Route path="/magangDetail/:id" element={<MagangDetail />} />
           <Route path="/mentoring" element={<Mentor />} />
           <Route path="/mentoringInfo" element={<MentorInfo />}>
-            <Route path="/mentoringInfo/data" element={<DataPribadi />} />
-            <Route path="/mentoringInfo/pengalaman" element={<Pengalaman />} />
+            <Route path="/mentoringInfo/data/:id" element={<DataPribadi />} />
+            <Route path="/mentoringInfo/pengalaman/:id" element={<Pengalaman />} />
           </Route>
           <Route path="/mentorCheckout" element={<MentorCheckout />} />
           <Route path="/mentorConfirm" element={<MentorConfirm />} />
@@ -67,7 +67,7 @@ const MainRoute = () => {
           </Route>
         </Route>
       </Routes>
-    </>
+    </div>
   );
 };
 

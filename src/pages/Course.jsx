@@ -9,35 +9,36 @@ import { ImSpinner2 } from "react-icons/im";
 const Course = () => {
   const [rec, setRec] = useState([]);
   const [home, setHome] = useState([]);
-  const [load, setLoad] = useState(true);
+  const [load, setLoad] = useState(false);
   const token = window.localStorage.getItem("token");
 
   const getRecCourse = async () => {
     await BaseURL.get("/api/courseinfo/rekomendasi", {
-      headers: { Authorization: `Bearer ${token}`},
+      headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => {
         setRec(res.data.data);
-        setLoad(false)
       })
-      .catch((err) => {});
+      .catch(() => {});
   };
 
   const getHomeCourse = async () => {
     await BaseURL.get("/api/courseinfo?search=", {
-      headers: { Authorization: `Bearer ${token}`},
+      headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => {
         setHome(res.data.data);
-        setLoad(false)
       })
-      .catch((err) => {});
+      .catch(() => {})
+      .finally(() => {setLoad(false)})
+      
   };
 
   useEffect(() => {
+    setLoad(true);
     getRecCourse();
-    getHomeCourse()
-  }, []);
+    getHomeCourse();
+  }, [token]);
 
   return (
     <WebLayout>
@@ -83,18 +84,10 @@ const Course = () => {
           </div>
 
           <div className="flex justify-center gap-10 flex-wrap mt-8 p-4">
-            {rec.map((data) => {
+            {rec.map((list) => {
               return (
                 <Card
-                  id={data.id}
-                  key={data.id}
-                  foto={data.foto}
-                  judul={data.judul}
-                  rate={data.rate}
-                  vote={data.vote}
-                  deskripsi={data.deskripsi}
-                  price={data.price}
-                  index={data.id}
+                  data={list}
                 />
               );
             })}
@@ -102,7 +95,7 @@ const Course = () => {
 
           <div className="flex items-center justify-between mt-8 p-4 xl:px-20 md:p-10">
             <h2 className="font-bold text-neutral-900 h3">
-              Front End Developer
+              Interest
             </h2>
             <p className="text-primary500 text-lg md:text-xl xl:text-3xl">
               See All
@@ -113,15 +106,7 @@ const Course = () => {
             {home.map((data) => {
               return (
                 <Card
-                  key={data.id}
-                  id={data.id}
-                  foto={data.foto}
-                  judul={data.judul}
-                  rate={data.rate}
-                  vote={data.vote}
-                  deskripsi={data.deskripsi}
-                  price={data.price}
-                  index={data.id}
+                  data={data}
                 />
               );
             })}

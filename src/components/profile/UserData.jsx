@@ -6,11 +6,42 @@ import OtherButton from "../button/OtherButton";
 import Swal from "sweetalert2";
 import SelectInput from "../auth/SelectInput";
 import BaseURL from "../../api/BaseURL";
+import { toDate } from "../../utils/toDate";
+import { ImSpinner2 } from "react-icons/im";
 
 const UserData = () => {
   const [userData, setuserData] = useState([]);
+  const [load, setLoad] = useState(false);
   const token = window.localStorage.getItem("token");
 
+  const updateProfileData = async () => {
+    await BaseURL.put("api/profile", {
+      full_name: userData.full_name,
+      lokasi: userData.lokasi,
+      deskripsi: userData.deskripsi,
+      tanggal_lahir: userData.tanggal_lahir,
+      tempat_lahir: userData.tempat_lahir,
+      interest: userData.interest
+    }, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then(() => {
+        Swal.fire({
+          title: "Berhasil Disimpan",
+          color: "#3A98B9",
+          icon: "success",
+          iconColor: "#3A98B9",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        getUserData()
+      });
+  };
 
   const simpan = () => {
     Swal.fire({
@@ -22,17 +53,11 @@ const UserData = () => {
       color: "#3A98B9",
       cancelButtonColor: "#d33",
       confirmButtonText: "Simpan",
-      cancelButtonText: 'Tidak'
+      cancelButtonText: "Tidak",
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
-          title: "Berhasil Disimpan",
-          color: "#3A98B9",
-          icon: "success",
-          iconColor: "#3A98B9",
-          showConfirmButton: false,
-          timer: 1500,
-        });
+        setLoad(true)
+        updateProfileData();
       }
     });
   };
@@ -47,7 +72,7 @@ const UserData = () => {
       color: "#3A98B9",
       cancelButtonColor: "#d33",
       confirmButtonText: "Batal",
-      cancelButtonText: 'tidak',
+      cancelButtonText: "tidak",
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire({
@@ -72,12 +97,22 @@ const UserData = () => {
       })
       .catch((err) => {
         console.log(err);
-      });
+      })
+      .finally(() => setLoad(false));
   };
 
   useEffect(() => {
+    setLoad(true);
     getUserData();
   }, [token]);
+
+  if (load)
+    return (
+      <div className="container-svg flex justify-center items-center h-screen">
+        <ImSpinner2 className="w-24 h-24 animate-spin text-primary400" />
+      </div>
+    );
+
   return (
     <div className="flex flex-col gap-8 xl:gap-16">
       <div className="flex flex-col">
@@ -164,7 +199,7 @@ const UserData = () => {
         </PrimaryButton>
         <OtherButton
           handleClick={() => {
-            batalkan()
+            batalkan();
           }}
         >
           Batalkan

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Interest from "../../data/Interest";
 import Select from "react-select";
 
-const SelectInput = ({ interestID, setInput, input, defaultInterest = "" }) => {
+const SelectInput = ({ interestID, setInput, input, defaultInterest }) => {
   const [interest, setInterest] = useState([]);
 
   const getKeyByValue= (object, value) => {

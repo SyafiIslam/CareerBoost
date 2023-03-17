@@ -12,10 +12,10 @@ const Lesson = () => {
         </h1>
         <iframe className='my-8 xl:w-7/12 mx-auto rounded-2xl' src="https://www.youtube.com/watch?v=NrO0CJCbYLA" controls></iframe>
         <h2 className="font-bold mb-6 h4">Konten Kursus</h2>
+            {/* <Dropdown />
             <Dropdown />
             <Dropdown />
-            <Dropdown />
-            <Dropdown />
+            <Dropdown /> */}
       </div>
     </WebLayout>
   )

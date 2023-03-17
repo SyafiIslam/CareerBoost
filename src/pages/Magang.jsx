@@ -118,19 +118,11 @@ const Magang = () => {
                 </div>
               </div>
               <div className="flex flex-col justify-evenly items-stretch md:flex-row mx-auto flex-wrap gap-7 mt-10">
-                {rec.map((data, index) => {
+                {rec.map((data) => {
                   return (
                     <MagangCard
-                      id={data.id}
-                      key={index}
-                      logo={data.logo}
-                      perusahaan={data.perusahaan}
-                      interest={data.interest}
-                      lokasi={data.lokasi}
-                      skill={data.skill}
-                      release={data.release}
-                      applied={data.applied}
-                      status_magang={data.status_magang}
+                      data={data}
+                      key={data.id}
                     />
                   );
                 })}
@@ -152,22 +144,11 @@ const Magang = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center flex-col gap-8">
-                {hire.map((data, index) => {
+                {hire.map((data) => {
                   return (
                     <HireCard
                       key={data.id}
-                      id={data.id}
-                      applied={data.applied}
-                      deskripsi={data.deskripsi}
-                      interest={data.interest}
-                      jangka_waktu={data.jangka_waktu}
-                      logo={data.logo}
-                      lokasi={data.lokasi}
-                      perusahaan={data.perusahaan}
-                      rate={data.rate}
-                      release={data.release}
-                      skill={data.skill}
-                      status_magang={data.status_magang}
+                      data={data}
                     />
                   );
                 })}

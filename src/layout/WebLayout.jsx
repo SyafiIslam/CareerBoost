@@ -4,7 +4,7 @@ import Navbar from './Navbar'
 
 const WebLayout = ({children}) => {
   return (
-    <div className='bg-slate-50'>
+    <div className='bg-slate-50 flex-grow'>
       <Navbar />
         <div className='h-max'>
           {children}
