@@ -1,5 +1,6 @@
 {
-  "email": "tes@gmail.com",
+  "email": "admin@gmail.com",
+  "username": "admin",
   "password": "12345",
-  "token": "123"
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNjc4ODU1NTMwfQ.hfdlnevOPqFTSLz5ZGC7-19_TDQvwpJ49omxH2P4630"
 }

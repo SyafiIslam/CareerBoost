@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import mentor from "../../data/mentoring.json";
 import { HiDotsHorizontal } from "react-icons/hi";
 import loc from "../../assets/magang/location.svg";
-import BaseURL from "../../api/BaseURL";
 import Rating from "react-rating";
 import { BsStarFill, BsStar } from "react-icons/bs";
 

@@ -4,10 +4,10 @@ import BaseURL from "../../api/BaseURL";
 import { BsStarFill, BsStar } from "react-icons/bs";
 import Rating from "react-rating";
 
-const Card = ({ foto, judul, rate, vote, deskripsi, price, index }) => {
+const Card = ({ id, foto, judul, rate, vote, deskripsi, price, index }) => {
   return (
     <Link
-      to="/courseDetail"
+      to={`/courseDetail/${id}`}
       key={index}
       className="flex flex-col justify-center bg-neutral-50 w-10/12 md:w-70 xl:w-72 rounded-3xl shadow-lg"
     >

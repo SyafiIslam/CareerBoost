@@ -7,23 +7,36 @@ import BaseURL from "../api/BaseURL";
 import { ImSpinner2 } from "react-icons/im";
 
 const Course = () => {
-  const [data, setData] = useState([]);
+  const [rec, setRec] = useState([]);
+  const [home, setHome] = useState([]);
   const [load, setLoad] = useState(true);
   const token = window.localStorage.getItem("token");
 
-  const getAllCourse = async () => {
-    await BaseURL.get("/api/courseinfo?search=", {
-      headers: { Authorization: `Bearer ${token}` },
+  const getRecCourse = async () => {
+    await BaseURL.get("/api/courseinfo/rekomendasi", {
+      headers: { Authorization: `Bearer ${token}`},
     })
       .then((res) => {
-        setData(res.data.data);
+        setRec(res.data.data);
+        setLoad(false)
+      })
+      .catch((err) => {});
+  };
+
+  const getHomeCourse = async () => {
+    await BaseURL.get("/api/courseinfo?search=", {
+      headers: { Authorization: `Bearer ${token}`},
+    })
+      .then((res) => {
+        setHome(res.data.data);
         setLoad(false)
       })
       .catch((err) => {});
   };
 
   useEffect(() => {
-    getAllCourse();
+    getRecCourse();
+    getHomeCourse()
   }, []);
 
   return (
@@ -70,9 +83,10 @@ const Course = () => {
           </div>
 
           <div className="flex justify-center gap-10 flex-wrap mt-8 p-4">
-            {data.map((data) => {
+            {rec.map((data) => {
               return (
                 <Card
+                  id={data.id}
                   key={data.id}
                   foto={data.foto}
                   judul={data.judul}
@@ -96,10 +110,11 @@ const Course = () => {
           </div>
 
           <div className="flex justify-center gap-10 flex-wrap mt-8 p-4">
-            {data.map((data) => {
+            {home.map((data) => {
               return (
                 <Card
                   key={data.id}
+                  id={data.id}
                   foto={data.foto}
                   judul={data.judul}
                   rate={data.rate}

@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL:"https://iqbalmuz.aenzt.tech",
+  baseURL:"https://iqbalmuz.aenzt.tech/",
 })

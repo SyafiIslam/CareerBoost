@@ -35,34 +35,30 @@ const Home = () => {
           <div className="flex flex-col justify-center items-center gap-5">
             <div className="flex flex-col justify-center items-center">
               <img className="" src={logoMentor} />
-              <h3 className="font-bold h4  mt-4">
-                Program Mentoring
-              </h3>
+              <h3 className="font-bold h4  mt-4">Program Mentoring</h3>
             </div>
             <p className="text-xs md:text-lg text-center">
-              Program mentoring dengan mentor berpengalaman sesuai ketertarikanmu
+              Program mentoring dengan mentor berpengalaman sesuai
+              ketertarikanmu
             </p>
           </div>
           <div className="flex flex-col justify-center items-center gap-5">
             <div className="flex flex-col justify-center items-center">
               <img className="" src={logoCourse} />
-              <h3 className="font-bold h4 mt-4">
-                Online Course
-              </h3>
+              <h3 className="font-bold h4 mt-4">Online Course</h3>
             </div>
             <p className="text-xs md:text-lg text-center">
-              Berbagai online course bersertifikat dengan materi pembelajaran sesuai roadmap
+              Berbagai online course bersertifikat dengan materi pembelajaran
+              sesuai roadmap
             </p>
           </div>
           <div className="flex flex-col justify-center items-center gap-5">
             <div className="flex flex-col justify-center items-center">
               <img className="" src={logoMagang} />
-              <h3 className="font-bold h4 mt-4">
-                Program Magang
-              </h3>
+              <h3 className="font-bold h4 mt-4">Program Magang</h3>
             </div>
             <p className="text-xs md:text-lg text-center">
-              Program internship bersetifikat oleh perusahaan-perusahaan ternama 
+              Program internship bersetifikat oleh perusahaan-perusahaan ternama
             </p>
           </div>
         </div>
@@ -78,14 +74,13 @@ const Home = () => {
               Mentor yang berkompeten di bidangnya
             </h2>
             <p className="mb-4 text-xs md:text-xl xl:text-base text-center xl:text-left xl:pr-10 text-neutral-500">
-            Berbagai mentor yang berpengalaman dan memiliki keahlian beragam. Temukan mentormu dan asah skill sesuai dengan keminatanmu!
+              Berbagai mentor yang berpengalaman dan memiliki keahlian beragam.
+              Temukan mentormu dan asah skill sesuai dengan keminatanmu!
             </p>
             <div className="mx-auto xl:mx-0">
-            <Link className="mt-4" to='/mentoring'>
+              <Link className="mt-4" to={window.localStorage.getItem('token') ? '/mentoring' : '/login'}>
                 <PrimaryButton>
-                  <p className="text-sm md:text-xl">
-                    Jelajahi
-                  </p>
+                  <p className="text-sm md:text-xl">Jelajahi</p>
                 </PrimaryButton>
               </Link>
             </div>
@@ -100,10 +95,11 @@ const Home = () => {
               Kursus online bersertifikat
             </h2>
             <p className="mb-4 xl:pl-10 text-center xl:text-right text-neutral-500">
-            Kursus online dengan konten sesuai roadmap yang dapat membantumu menambah pengetahuan untuk terjun ke dunia kerja
+              Kursus online dengan konten sesuai roadmap yang dapat membantumu
+              menambah pengetahuan untuk terjun ke dunia kerja
             </p>
             <div className="mx-auto w-max xl:m-0">
-              <Link className="mt-4" to="/course">
+              <Link className="mt-4" tto={window.localStorage.getItem('token') ? '/course' : '/login'}>
                 <PrimaryButton>
                   <p className="text-sm md:text-xl">Jelajahi</p>
                 </PrimaryButton>
@@ -120,10 +116,11 @@ const Home = () => {
               Rekomendasi program magang sesuai bidang minatmu
             </h2>
             <p className="mb-4 xl:pr-10 text-center xl:text-left text-neutral-500">
-            Tambah pengalaman magangmu dengan berbagai perusahaan ternama dan raih kesempatan bekerja di perusahaan
+              Tambah pengalaman magangmu dengan berbagai perusahaan ternama dan
+              raih kesempatan bekerja di perusahaan
             </p>
             <div className="mx-auto xl:mx-0">
-              <Link className="mt-4" to="/magang">
+              <Link className="mt-4" to={window.localStorage.getItem('token') ? '/magang' : '/login'}>
                 <PrimaryButton>
                   <p className="text-sm md:text-xl">Jelajahi</p>
                 </PrimaryButton>

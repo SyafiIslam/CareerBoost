@@ -47,12 +47,12 @@ const MainRoute = () => {
           <Route path="/" element={<Home />} />
         <Route element={<ProtectedRoute />}>
           <Route path="/course" element={<Course />} />
-          <Route path="/courseDetail" element={<CourseDetail />} />
+          <Route path="/courseDetail/:id" element={<CourseDetail />} />
           <Route path="/courseCheckout" element={<CourseCheckout />} />
           <Route path="/courseConfirm" element={<CourseConfirm />} />
           <Route path="/lesson" element={<Lesson />} />
           <Route path="/magang" element={<Magang />} />
-          <Route path="/magangDetail" element={<MagangDetail />} />
+          <Route path="/magangDetail/:id" element={<MagangDetail />} />
           <Route path="/mentoring" element={<Mentor />} />
           <Route path="/mentoringInfo" element={<MentorInfo />}>
             <Route path="/mentoringInfo/data" element={<DataPribadi />} />

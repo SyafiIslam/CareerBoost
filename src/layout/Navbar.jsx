@@ -122,7 +122,7 @@ const Navbar = () => {
           >
             <IoMdArrowDropdown className="" />
             <p className="text-base ">{name}</p>
-            <img src={avatar} className="md:w-2/12" />
+            <img src={avatar} className="md:w-2/12 xl:w-3/12" />
           </div>
         </Link>
       ) : (

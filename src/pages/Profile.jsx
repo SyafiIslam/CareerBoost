@@ -30,7 +30,7 @@ const Profile = () => {
             <div
               className={`absolute flex-col items-center justify-center ${
                 fotoClicked ? "flex" : "hidden"
-              } p-8 mt-16 font-bold bg-white sm:w-auto xl:w-5/12 sm:self-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 drop-shadow-md rounded-xl`}
+              } p-8 mt-16 font-bold bg-white sm:w-auto xl:w-5/12 sm:self-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 drop-shadow-md rounded-xl z-10`}
             >
 
               <p className="h5 font-bold">Upload foto profil baru</p>

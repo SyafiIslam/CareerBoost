@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import mentor from "../../data/mentoring.json";
+import Rating from "react-rating";
 import loc from "../../assets/magang/location.svg";
+import { BsStarFill, BsStar } from "react-icons/bs";
 
 const MentorSwipe = ({
   profile_photo,
@@ -9,8 +10,6 @@ const MentorSwipe = ({
   perusahaan,
   lokasi,
   rate,
-  deskripsi,
-  exp,
   interest,
   skill,
 }) => {
@@ -30,7 +29,13 @@ const MentorSwipe = ({
         </div>
         <div className="flex flex-col items-start xl:items-end justify-end gap-4"></div>
       </div>
-      <p className="p2 md:h6 font-medium my-2">{rate}</p>
+      <Rating
+        className="p2 md:h6 font-medium mb-4 text-yellow-400  "
+        emptySymbol={<BsStar />}
+        fullSymbol={<BsStarFill />}
+        initialRating={rate}
+        readonly
+      />
       <div className="flex gap-4 my-2">
         <img src={loc} alt="" />
         <p className="p1 text-neutral-700">{lokasi}</p>

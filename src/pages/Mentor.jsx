@@ -65,10 +65,6 @@ const Mentor = () => {
       });
   };
 
-  const checkData = () => {
-    console.log(data);
-  };
-
   useEffect(() => {
     getAllMentor();
   }, []);
