@@ -10,7 +10,7 @@ const Card = ({ data }) => {
     <Link
       to={`/courseDetail/${data.id}`}
       key={data.index}
-      className="flex flex-col justify-center bg-neutral-50 w-10/12 md:w-70 xl:w-72 rounded-3xl shadow-lg"
+      className="flex flex-col justify-center bg-neutral-50 w-8/12 md:w-4/12 xl:w-72 rounded-3xl shadow-lg"
     >
       <img className="w-full rounded-t-3xl" src={data.foto} />
       <div className="flex flex-col mt-3 justify-center items-center p-4">

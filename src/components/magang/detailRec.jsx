@@ -1,14 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import data from "../../data/magangDetail.json";
 import loc from "../../assets/magang/location.svg";
 import { Link } from "react-router-dom";
+import BaseURL from "../../api/BaseURL";
+import { ImSpinner2 } from "react-icons/im";
 
-const detailRec = ({
-  rec,
-  key
-}) => {
+const detailRec = ({}) => {
+  const [load, setLoad] = useState(false);
+  const [rec, setRec] = useState([]);
+  const token = window.localStorage.getItem("token");
+
+  const getMagangRec = async () => {
+    await BaseURL.get("/api/maganginfo/rekomendasi", {
+      headers: { Authorization: `Bearer ${token}` },
+    }).then((res) => {
+      setRec(res.data.data);
+    });
+  };
+
+  useEffect(() => {
+    setLoad(true)
+    getMagangRec()
+    setLoad(false)
+  })
+
+  if (load)
+    return (
+      <div className="container-svg flex justify-center items-center h-screen">
+        <ImSpinner2 className="w-24 h-24 animate-spin text-primary400" />
+      </div>
+    );
+
   return (
-    <Link to={`/magangDetail/${key}`} className="flex flex-col p-2 md:p-6 bg-neutral-50 xl:basis-5/12 shadow-lg rounded-xl">
+    <Link
+      to={`/magangDetail/${rec.id}`}
+      className="flex flex-col p-2 md:p-6 bg-neutral-50 xl:basis-5/12 shadow-lg rounded-xl"
+    >
       <h1 className="font-bold h6 mb-8">Recommended</h1>
       <div className="flex flex-col gap-4">
         {rec.map((data, index) => {
@@ -31,9 +58,7 @@ const detailRec = ({
               </div>
               {data.interest.map((list, index) => {
                 return (
-                  <p className="h5 font-bold text-primary500">
-                    {list.nama}
-                  </p>
+                  <p className="h5 font-bold text-primary500">{list.nama}</p>
                 );
               })}
               <div className="flex mt-8">
