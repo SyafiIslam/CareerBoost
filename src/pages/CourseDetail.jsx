@@ -21,7 +21,7 @@ const CourseDetail = () => {
     })
       .then((res) => {
         setData(res.data.data);
-        console.log(res.data.data);
+        console.log(data);
         setLoad(false);
       })
       .catch((err) => {
@@ -87,8 +87,8 @@ const CourseDetail = () => {
             </div>
             <div className="flex flex-col py-4 px-8 mb-4">
               <h2 className="font-bold mb-2 h4">Konten Kursus</h2>
-              {data.playlist.map((list) => {
-                return <Dropdown list={list} />;
+              {data.playlist.map((list, index) => {
+                return <Dropdown key={index} list={list} />;
               })}
             </div>
           </div>

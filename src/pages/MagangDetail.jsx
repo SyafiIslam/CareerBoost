@@ -19,11 +19,10 @@ const MagangDetail = () => {
   const token = window.localStorage.getItem("token");
 
   const getMagangRec = async () => {
-    await BaseURL.get("/api/maganginfo/rekomendasi", {
+      await BaseURL.get("/api/maganginfo/rekomendasi", {
       headers: { Authorization: `Bearer ${token}` },
     }).then((res) => {
       setRec(res.data.data);
-      console.log(res.data.data);
     });
   };
 
@@ -37,17 +36,21 @@ const MagangDetail = () => {
         setSkill(data.skill)
         setJob(data.job_description)
         console.log(data);
+
       })
       .finally(() => {
-        setLoad(false);
       });
   };
 
   useEffect(() => {
-    setLoad(true);
-    getMagangRec();
-    getMagangData();
-  }, [load]);
+    setLoad(true)
+    if (token) {
+      getMagangRec()
+      getMagangData()
+    }    
+    setLoad(false)
+    
+  }, [token]);
   if (load)
     return (
       <div className="container-svg flex justify-center items-center h-screen">
