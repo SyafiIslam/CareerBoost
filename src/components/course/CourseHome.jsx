@@ -9,11 +9,11 @@ const CourseHome = () => {
   const token = window.localStorage.getItem("token");
 
   const getHome = async () => {
-    await BaseURL.get("/api/courseinfo?search=", {
+    await BaseURL.get("/api/courseinfo/rekomendasi", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => {
-        setHome (res.data.data);
+        setHome(res.data.data);
       })
       .catch(() => {});
   };
