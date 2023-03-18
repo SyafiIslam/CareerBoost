@@ -24,64 +24,6 @@ const DataPribadi = () => {
     setLoad(false);
   }, [load]);
   return (
-    // Datanya kosong ntah kenapa
-    // <div className="flex flex-col gap-16">
-    //   <div className="flex flex-col">
-    //     <div className="flex flex-col xl:flex-row gap-6 xl:items-center justify-center">
-    //       <div className="flex flex-col basis-1/2 gap-4 xl:gap-6">
-    //         <p className="font-bold h5">Nama Lengkap</p>
-    //         <p className="p1 border-2 border-neutral-700 rounded-full text-neutral-700 py-4 px-10">
-    //           {data.full_name}
-    //         </p>
-    //       </div>
-    //       <div className="flex flex-col basis-1/2 gap-4 xl:gap-6">
-    //         <p className="font-bold h5">Lokasi</p>
-    //         <p className="p1 border-2 border-neutral-700 rounded-full text-neutral-700 py-4 px-10">
-    //           {data.lokasi}
-    //         </p>
-    //       </div>
-    //     </div>
-    //   </div>
-    //   <div className="flex flex-col">
-    //     <div className="flex flex-col xl:flex-row gap-6 xl:items-center justify-center">
-    //       <div className="flex flex-col basis-1/2 gap-4 xl:gap-6">
-    //         <p className="font-bold h5">Keahlian</p>
-    //         <p className="p1 border-2 border-neutral-700 rounded-full text-neutral-700 py-4 px-10">
-    //           {skill.map((skill) => {
-    //             return <span>{skill.nama} </span>;
-    //           })}
-    //         </p>
-    //       </div>
-    //       <div className="flex flex-col basis-1/2 gap-4 xl:gap-6">
-    //         <p className="font-bold h5">Interest</p>
-    //         <p className="p1 border-2 border-neutral-700 rounded-full text-neutral-700 py-4 px-10">
-    //           {interest.map((skill) => {
-    //             return <span>{skill.nama} </span>;
-    //           })}
-    //         </p>
-    //       </div>
-    //     </div>
-    //   </div>
-    //   <div className="flex flex-col basis-1/2 gap-6">
-    //     <p className="font-bold h5">Deskripsi</p>
-    //     <p className="p1 border-2 border-neutral-700 rounded-3xl xl:rounded-full text-neutral-700 py-4 px-10">
-    //       {data.deskripsi}
-    //     </p>
-    //   </div>
-    //   <div className="flex flex-col gap-4 xl:gap-8">
-    //     <p className="font-bold h5">Review</p>
-    //     <div className="flex flex-col xl:flex-row gap-2 xl:gap-6">
-    //       <p className="h6">⭐⭐⭐⭐⭐</p>
-    //       <p className="h6 font-semibold">{data.rate}</p>
-    //     </div>
-    //   </div>
-    //   <div className="flex flex-col gap-2 xl:gap-8">
-    //     <p className="font-bold h5">Fee</p>
-    //     <p className="h4 font-extrabold text-secondary400">
-    //       {toRupiah(data.fee)}
-    //     </p>
-    //   </div>
-    // </div>
     <div className="flex flex-col gap-16">
       <div className="flex flex-col">
         <div className="flex flex-col xl:flex-row gap-6 xl:items-center justify-center">
